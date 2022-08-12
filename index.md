@@ -45,17 +45,20 @@
         </div>
         <br/>
          <div class="d2">
-              <p>推荐帖子</p>
-              <hr/>
-               <p><a href="http://my.4399.com/forums/mtag-81938" target="_blank">[D坛]</a> <a href="http://my.4399.com/forums/mtag-81938-1926" target="_blank">[玩家交流]</a>&nbsp;<a style="color:#333333" href="http://my.4399.com/forums/thread-61868735" target="_blank">【小祸】D坛大部分解析/同人帖-超链接目录</a><br/>
-                <span style="color:#999999;font-size:12px;">本帖为4399 3D坦克官方群组的大部分解析帖，以及一些同人(漫画、小说)帖之类的较好的/…</span></p>
+                <p>推荐帖子</p>
                 <hr/>
-                <p><a href="http://my.4399.com/forums/mtag-81938" target="_blank">[D坛]</a> <a href="http://my.4399.com/forums/mtag-81938-1926" target="_blank">[玩家交流]</a>&nbsp;<a style="color:#333333" href="http://my.4399.com/forums/thread-62628228-hostonly-1" target="_blank">3D坦克 Wiki（标准版目录）</a><br/>
-                <span style="color:#999999;font-size:12px;">切换到图文版&nbsp;&nbsp;&nbsp;3D坦克 Wiki</span></p>
-                <hr/>
-                <p><a href="http://my.4399.com/forums/mtag-81938" target="_blank">[D坛]</a> <a href="http://my.4399.com/forums/mtag-81938-1926" target="_blank">[玩家交流]</a>&nbsp;<a style="color:#333333" href="http://my.4399.com/forums/thread-62628228-hostonly-1" target="_blank">Tanki Online Wiki（图文版目录）</a><br/>
-                <span style="color:#999999;font-size:12px;">&nbsp;</span></p>
-                <hr/>
+                <p><a href="http://my.4399.com/forums/mtag-81938" target="_blank">[D坛]</a> <a href="http://my.4399.com/forums/mtag-81938-1926" target="_blank">[玩家交流]</a>&nbsp;<a style="color:#333333" href="http://my.4399.com/forums/thread-61868735" target="_blank">【小祸】D坛大部分解析/同人帖-超链接目录</a><br/>
+                 <span style="color:#999999;font-size:12px;">本帖为4399 3D坦克官方群组的大部分解析帖，以及一些同人(漫画、小说)帖之类的较好的/…</span></p>
+                 <table cellpadding="2" cellspacing="0"><tbody><tr><td>https://user-images.githubusercontent.com/110889622/184350873-5d7b88e6-7c56-4ffc-8098-86dc4b1f25ae.jpg</td><td>https://user-images.githubusercontent.com/110889622/184350879-82a578f4-5a3f-4e09-b56d-4a65834bd799.jpg</td><td>&nbsp;</td></tr></tbody></table>
+                 <hr/>
+                 <p><a href="http://my.4399.com/forums/mtag-81938" target="_blank">[D坛]</a> <a href="http://my.4399.com/forums/mtag-81938-1926" target="_blank">[玩家交流]</a>&nbsp;<a style="color:#333333" href="http://my.4399.com/forums/thread-62628228-hostonly-1" target="_blank">3D坦克 Wiki（标准版目录）</a><br/>
+                 <span style="color:#999999;font-size:12px;">切换到图文版&nbsp;&nbsp;&nbsp;3D坦克 Wiki</span></p>
+                 <table cellpadding="2" cellspacing="0"><tbody><tr><td>td1</td><td>td2</td><td>td3</td></tr></tbody></table>
+                 <hr/>
+                 <p><a href="http://my.4399.com/forums/mtag-81938" target="_blank">[D坛]</a> <a href="http://my.4399.com/forums/mtag-81938-1926" target="_blank">[玩家交流]</a>&nbsp;<a style="color:#333333" href="http://my.4399.com/forums/thread-62628228-hostonly-1" target="_blank">Tanki Online Wiki（图文版目录）</a><br/>
+                 <span style="color:#999999;font-size:12px;">&nbsp;</span></p>
+                 <table cellpadding="2" cellspacing="0"><tbody><tr><td>td1</td><td>td2</td><td>td3</td></tr></tbody></table>
+                 <hr/>
              </div>
        </div>
 </div>
