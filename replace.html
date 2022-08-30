@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+<style tape="text-css">
+  <meta charset="UTF-8">
+  <title>文字替换</title>
+</style>
+</head>
+<body>
+<div class="dtopttitle" style="">test</div>
+<div class="dtotop" style=""><strong><a style="color:#FFFFFF;font-size:40px;" href="#">#</a></strong></div><!--俩悬浮div-->
+
+<div class="dbody"><!--主要内容-->
+<textarea name="textarea" id="text" rows="10" cols="50"></textarea>
+<div>
+  查找<input
+    id="oldVal"
+    placeholder="要查找的内容"
+    value="">
+  替换<input id="newVal" placeholder="用来替换的内容">
+  <button onclick="replace()">替换</button>
+  <button onclick="replace('all')">全部替换</button>
+</div>
+</div><!--主要内容结束-->
+  
+<script type="text/javascript">
+ 
+function replace (type) {
+  let newText = ''
+  const text = document.getElementById('text').value || ''
+  const oldVal = document.getElementById('oldVal').value || ''
+  const newVal = document.getElementById('newVal').value || ''
+  if (type === 'all') {
+    // 全部替换
+    newText = text.replaceAll(oldVal, newVal)
+  } else {
+    // 替换找到的第一个
+    newText = text.replace(oldVal, newVal)
+  }
+  // 将替换后的内容，更新到文档上
+  document.getElementById('text').value = newText
+}
+</script>
+
+</body>
+</html>
