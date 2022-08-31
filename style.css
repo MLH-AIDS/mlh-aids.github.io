@@ -8,16 +8,16 @@ a{
   color:#;
 }
 .abili{/*b站链接*/
-  color:#;
+  color:#EE33EE;
 }
 .dtoptitle{/*顶边悬浮栏*/
   opacity:75%;
   position:fixed;
-  text-align:center;
   z-index:3;
   top:0;
   left:0;
   right:0;
+  text-align:center;
   vertical-align:middle;
   display:table-cell;
   font-size:24px;
@@ -35,6 +35,12 @@ a{
   text-align:center;
   background:#46DF11;
   width:40px;
+  font-size:40px;
+  color:#FFFFFF;
+}
+.op40{
+  opacity:40%;
+  text-align:center;
 }
 .dbody{
   border-radius:10px;
