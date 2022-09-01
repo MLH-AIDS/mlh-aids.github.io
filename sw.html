@@ -6,6 +6,16 @@
 <link rel="stylesheet" type="text/css" href="style.css">
   <style tape="text-css">
   </style>
+  <script language="javascript" type="text/javascript">
+ function change()
+ {
+  var con = document.getElementById("con");
+  var conValue = con.value;
+  conValue = conValue + "&nbsp;-&nbsp;3D坦克&nbsp;Wiki" ; //"&nbsp;-&nbsp;3D坦克&nbsp;Wiki" 为要加的文字
+  con.value = conValue;
+  alert(con.value);
+ }
+</script>
 </head>
 <body>
 <div class="dtoptitle"><p>SEARCH WIKI</p></div>
@@ -13,7 +23,7 @@
 <div class="op40"><img src="https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg" alt="background" /></div>
 <div class="dbody">
   <div style="box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:600px;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;">
-	<form name="bodySearch0.012302570466" id="bodySearch0.012302570466" class="bodySearch" action="http://my.4399.com/forums/search" style="box-sizing:border-box;border:none;margin:0px;width:650px;">
+	<form name="bodySearch0.012302570466" id="con" class="bodySearch" action="http://my.4399.com/forums/search" style="box-sizing:border-box;border:none;margin:0px;width:650px;" autocomplete="on" method="post">
 		<div style="box-sizing:border-box;display:flex;flex-flow:row wrap;">
 			<label for="bodySearchInput0.012302570466" style="box-sizing:border-box;display:inline-block;margin:0px;width:688px;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;">SEARCH WIKI</label>
 			<input type="text" name="keyword" class="mw-ui-input mw-ui-input-inline" size="50" id="searchInput" placeholder="keyword" dir="ltr" style="margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:100%;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;" />
