@@ -1,29 +1,44 @@
-<html>
+<!DOCTYPE html >
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>bank</title>
+<title>Bank</title>
 <link rel="shortcut icon" href="" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="">
 <style tape="text-css">
 </style>
 </head>
-<body>
-<div style="padding:10px;">
+<body style="">
+<div id="diva" style="padding:10px;text-align:center;">
 
-    <h1>bank</h1>
+    <h1>Bank</h1>
     <p style="font-size:24px;">You have 100¥</p>
-    <button onclick="changem()">extract</button>
-    <img loading="lazy" id="mym" src="/photo/greenm.png" width="300" height="300">
+    <button id="button1" onclick="changem()"><span style="font-size:24px"><a style="color:#333333;" id="a1" onclick="">Click here to withdraw money</a></span></button>
+    <button id="button2" onclick="vi()"><span style="font-size:24px"><a style="color:#EE3333;" id="a1" onclick="" href="./bv.html">Click here to withdraw money</a></span></button>
+    <br/>
+    <img loading="lazy" id="mym" src="./photo/greenm.png" width="200" height="200">
 
 </div>
 
 
+
+
 <script>
-function changem()
-{
-    element=document.getElementById('mym')
-    element.src="/photo/redm.png"
-}
+    var button1 = document.getElementById('button1');
+    button1.hidden = false
+    var button2 = document.getElementById('button2');
+    button2.hidden = true
+    var diva = document.getElementById('diva');
+    diva.hidden = false
+    var divb = document.getElementById('divb');
+    divb.hidden = true
+    function changem()
+    {
+        element=document.getElementById('mym')
+        element.src="./photo/redm.png"
+        button1.hidden = true
+        button2.hidden = false
+    }
 </script>
 
 
