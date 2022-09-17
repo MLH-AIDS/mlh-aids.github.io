@@ -35,9 +35,9 @@
 			<input type="submit" id="tagid" name="tagid" value="81938" onclick="change();" style="margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;" /><br />
 		</div>
 	</form>
-  </div>
+  </div><!--搜索框结束-->
   <p><input type="submit" name="choose" id="choose" onclick="a()" value="加入格式：开" > （格式为“标题 - 3D坦克 Wiki”）</p>
-  <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：开" ></p>
+  <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：关" ></p>
   
 </div>
 <script language="javascript" type="text/javascript">
@@ -55,12 +55,12 @@ function b(){
     input.getAttributeNode('onclick').value=('change()');
 }
 function a2(){
-    button2.getAttributeNode('value').value=('搜索打开在新窗口：关');
+    button2.getAttributeNode('value').value=('搜索打开在新窗口：开');
     button2.getAttributeNode('onclick').value=('b2()');
     input.getAttributeNode('target').value=('_blank');
 }
 function b2(){
-    button2.getAttributeNode('value').value=('搜索打开在新窗口：开');
+    button2.getAttributeNode('value').value=('搜索打开在新窗口：关');
     button2.getAttributeNode('onclick').value=('a2()');
     input.getAttributeNode('target').value=('_self');
 }
