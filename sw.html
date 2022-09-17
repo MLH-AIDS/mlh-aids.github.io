@@ -1,40 +1,69 @@
 <!DOCTAPE html>
 <html>
 <head>
+<meta charset="utf-8"> 
 <title>Search Wiki</title>
 <link rel="shortcut icon" href="https://github.com/MLH-AIDS/mlh-aids.github.io/blob/ebebd366f183b6e713ccebd7d5ee735652d7a7f8/IMG_20220831_172340.jpg" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href="style.css">
   <style tape="text-css">
   </style>
   <script language="javascript" type="text/javascript">
- function change()
- {
-  var con = document.getElementById("con");
-  var conValue = con.value;
-  conValue = conValue + " - 3D坦克 Wiki" ; //加文字
-  con.value = conValue;
-  alert(con.value);
- }
+  function change()
+  {
+    var con = document.getElementById("con");
+    var conValue = con.value;
+    conValue = conValue + " - 3D坦克 Wiki" ; //加文字
+    con.value = conValue;
+    //alert(con.value);
+  }
 </script>
 </head>
 <body>
 <div class="dtoptitle"><p>SEARCH WIKI</p></div>
-<br/><br/><br/>
+<br/><br/><br/><br/>
 <div class="op40"><img src="https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg" alt="background" /></div>
 <div class="dbody">
-<span style="font-size:12px;">特殊页面</span>
+<p style="font-size:12px;">特殊页面</p>
 <h1>搜索Wiki</h1>
 <hr/>
-<em>另请参阅：</em><a href="http://my.4399.com/forums/thread-62628228-hostonly-1">3D坦克 Wiki</a>
+<p><em>另请参阅：</em><a href="http://my.4399.com/forums/thread-62628228-hostonly-1">3D坦克 Wiki</a></p>
   <div style="left:140;position:relative;box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:600px;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;">
 	<form name="fo" id="fo" class="bodySearch" action="http://my.4399.com/forums/search" style="box-sizing:border-box;border:none;margin:0px;width:650px;" autocomplete="on" method="get">
 		<div style="box-sizing:border-box;display:flex;flex-flow:row wrap;">
 			<label for="con" style="box-sizing:border-box;display:inline-block;margin:0px;width:688px;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;">SEARCH WIKI</label>
 			<input type="text" name="keyword"  size="50" id="con" placeholder="keyword" dir="ltr" style="margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:100%;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;" />
-			<input type="submit" name="tagid" value="81938" onclick="change();" style="margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;" /><br />
+			<input type="submit" id="tagid" name="tagid" value="81938" onclick="change();" style="margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;" /><br />
 		</div>
 	</form>
   </div>
+  <p><input type="submit" name="choose" id="choose" onclick="a()" value="加入格式：开" > （格式为“标题 - 3D坦克 Wiki”）</p>
+  <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：开" ></p>
+  
 </div>
+<script language="javascript" type="text/javascript">
+var button=document.getElementById('choose')
+var input=document.getElementById('tagid')
+var button2=document.getElementById('choose2')
+function a(){
+    button.getAttributeNode('value').value=('加入格式：关');
+    button.getAttributeNode('onclick').value=('b()');
+    input.getAttributeNode('onclick').value=('null()');
+}
+function b(){
+    button.getAttributeNode('value').value=('加入格式：开');
+    button.getAttributeNode('onclick').value=('a()');
+    input.getAttributeNode('onclick').value=('change()');
+}
+function a2(){
+    button2.getAttributeNode('value').value=('搜索打开在新窗口：关');
+    button2.getAttributeNode('onclick').value=('b2()');
+    input.getAttributeNode('target').value=('_blank');
+}
+function b2(){
+    button2.getAttributeNode('value').value=('搜索打开在新窗口：开');
+    button2.getAttributeNode('onclick').value=('a2()');
+    input.getAttributeNode('target').value=('_self');
+}
+</script>
 </body>
 </html>
