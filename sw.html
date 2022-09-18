@@ -44,6 +44,7 @@
 var button=document.getElementById('choose')
 var input=document.getElementById('tagid')
 var button2=document.getElementById('choose2')
+var fo=document.getElementById('fo')
 function a(){
     button.getAttributeNode('value').value=('加入格式：关');
     button.getAttributeNode('onclick').value=('b()');
@@ -57,12 +58,12 @@ function b(){
 function a2(){
     button2.getAttributeNode('value').value=('搜索打开在新窗口：开');
     button2.getAttributeNode('onclick').value=('b2()');
-    input.getAttributeNode('target').value=('_blank');
+    fo.getAttributeNode('target').value=('_blank');
 }
 function b2(){
     button2.getAttributeNode('value').value=('搜索打开在新窗口：关');
     button2.getAttributeNode('onclick').value=('a2()');
-    input.getAttributeNode('target').value=('_self');
+    fo.getAttributeNode('target').value=('_self');
 }
 </script>
 </body>
