@@ -1,62 +1,62 @@
-body{
-  background-color:#214A60;
+body {
+    background-color:#214050;
 }
-a{
-  color:#46df11;
+a {
+    color:#46df11;
 }
-.a49{
-  /*群组链接*/
-  color:#;
+.a49 {
+    /*群组链接*/
+    color:#;
 }
-.abili{
-  /*b站链接*/
-  color:#EE33EE;
+.abili {
+    /*b站链接*/
+    color:#EE33EE;
 }
-.dtoptitle{
-  /*顶边悬浮栏*/
-  opacity:75%;
-  position:fixed;
-  z-index:3;
-  top:0;
-  left:0;
-  right:0;
-  text-align:center;
-  vertical-align:middle;
-  display:table-cell;
-  font-size:24px;
-  color:#FFFFFF;
-  background:#23394E;
-  box-sizing:border-box;
+.dtoptitle {
+    /*顶边悬浮栏*/
+    opacity:75%;
+    position:fixed;
+    z-index:3;
+    top:0;
+    left:0;
+    right:0;
+    text-align:center;
+    vertical-align:middle;
+    display:table-cell;
+    font-size:24px;
+    color:#FFFFFF;
+    background:#23394E;
+    box-sizing:border-box;
 }
-.dtotop{
-  /*回到顶部*/
-  opacity:75%;
-  position:fixed;
-  z-index:4;
-  top:12;
-  right:5;
-  padding:3px;
-  text-align:center;
-  background:#46DF11;
-  width:40px;
-  font-size:40px;
-  color:#FFFFFF;
+.dtotop {
+    /*回到顶部*/
+    opacity:75%;
+    position:fixed;
+    z-index:4;
+    top:12;
+    right:5;
+    padding:3px;
+    text-align:center;
+    background:#46DF11;
+    width:40px;
+    font-size:40px;
+    color:#FFFFFF;
 }
-.op40{
-  opacity:40%;
-  text-align:center;
+.op40 {
+    opacity:40%;
+    text-align:center;
 }
-.dbody{
-  border-radius:10px;
-  -moz-border-radius:10px;
-  top:100;
-  left:10;
-  right:10;
-  background:#FFFFFF;
-  padding:6px;
-  z-index:1;
+.dbody {
+    border-radius:10px;
+    -moz-border-radius:10px;
+    top:100;
+    left:10;
+    right:10;
+    background:#FFFFFF;
+    padding:6px;
+    z-index:1;
 }
-.c99{
-  font-size:12px;
-  color:#999999;
+.c99 {
+    font-size:12px;
+    color:#999999;
 }
