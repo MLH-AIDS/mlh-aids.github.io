@@ -4,6 +4,10 @@ body {
 a {
     color:#46df11;
 }
+.background01{
+    background:url(https://s1.imagehub.cc/images/2022/09/27/background.png);
+    opacity:0.4;
+}
 .a49 {
     /*群组链接*/
     color:#;
