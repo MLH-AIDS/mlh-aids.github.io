@@ -6,7 +6,8 @@ a {
 }
 .background01{
     background:url(https://s1.imagehub.cc/images/2022/09/27/background.png);
-    opacity:0.4;
+    opacity:0.3;
+    z-index:1;
 }
 .a49 {
     /*群组链接*/
@@ -58,7 +59,7 @@ a {
     right:10;
     background:#FFFFFF;
     padding:6px;
-    z-index:1;
+    z-index:2;
 }
 .c99 {
     font-size:12px;
