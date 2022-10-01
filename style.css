@@ -1,6 +1,9 @@
 body {
-    /*background:#214050;*/
-    background:url(https://s1.imagehub.cc/images/2022/09/29/background01.png);
+    background-image:url(https://s1.imagehub.cc/images/2022/10/01/c8c3d009dbf499c47c64be4ca350622d.png),url(https://s1.imagehub.cc/images/2022/09/29/background01.png);/*前者为小背景，后者为大背景*/
+    background-color:rgba(33,64,80,1);
+    background-size:2100px 429px,auto;
+    background-repeat:no-repeat,repeat;
+    background-position:center 0px,0% 0%;
 }
 a {
     color:#46df11;
@@ -25,7 +28,7 @@ a {
 }
 .dtoptitle {
     /*顶边悬浮栏*/
-    opacity:75%;
+    opacity:80%;
     position:fixed;
     z-index:3;
     top:0;
@@ -38,6 +41,9 @@ a {
     color:#FFFFFF;
     background:#23394E;
     box-sizing:border-box;
+    border-bottom-style:solid;
+    border-bottom-width:2;
+    border-bottom-color:#466279;
 }
 .dtotop {
     /*回到顶部*/
@@ -56,6 +62,11 @@ a {
 .op40 {
     opacity:40%;
     text-align:center;
+    /*background:url(https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg);*/
+    background-size:1400px 286px;
+    width:970px;
+    height:286px;
+    background-position:center;
 }
 .dbody {
     border-radius:10px;
