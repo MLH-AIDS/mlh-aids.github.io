@@ -1,6 +1,6 @@
 body {
     background-image:url(https://s1.imagehub.cc/images/2022/10/01/c8c3d009dbf499c47c64be4ca350622d.png),url(https://s1.imagehub.cc/images/2022/09/29/background01.png);/*前者为小背景，后者为大背景*/
-    background-color:rgba(33,64,80,1);
+    background-color:#274154;
     background-size:2100px 429px,auto;
     background-repeat:no-repeat,repeat;
     background-position:center 0px,0% 0%;
@@ -28,7 +28,7 @@ a {
 }
 .dtoptitle {
     /*顶边悬浮栏*/
-    opacity:80%;
+    opacity:90%;
     position:fixed;
     z-index:3;
     top:0;
@@ -39,11 +39,11 @@ a {
     display:table-cell;
     font-size:24px;
     color:#FFFFFF;
-    background:#23394E;
+    background:#1F2C40;/*linear-gradient(to bottom,#122030,#193140);*/
     box-sizing:border-box;
     border-bottom-style:solid;
     border-bottom-width:2;
-    border-bottom-color:#466279;
+    border-bottom-color:#375165;
 }
 .dtotop {
     /*回到顶部*/
