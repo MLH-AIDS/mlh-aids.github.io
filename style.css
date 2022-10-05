@@ -1,14 +1,17 @@
 body {
-    background-image:url(https://s1.imagehub.cc/images/2022/10/01/c8c3d009dbf499c47c64be4ca350622d.png),url(https://s1.imagehub.cc/images/2022/09/29/background01.png);/*前者为小背景，后者为大背景*/
+    background-image:url(https://s1.imagehub.cc/images/2022/10/01/c8c3d009dbf499c47c64be4ca350622d.png),url(https://s1.imagehub.cc/images/2022/10/04/background90.png);/*前者为小背景，后者为大背景*/
     background-color:#274154;
     background-size:2100px 429px,auto;
     background-repeat:no-repeat,repeat;
     background-position:center 0px,0% 0%;
 }
+/*https://s1.imagehub.cc/images/2022/09/29/background01.png，覆盖层为78%。https://s1.imagehub.cc/images/2022/09/27/background.png，无覆盖层(原图)。*/
 a {
     color:#46df11;
 }
-/*.background01{
+div.background01{
+    display:none;
+/*
     background:#214050 url(https://s1.imagehub.cc/images/2022/09/27/background.png);
     opacity:15%;
     z-index:1;
@@ -17,16 +20,20 @@ a {
     left:0;
     right:0;
     bottom:0;
-}*/
-.a49 {
+*/
+}
+p.p1 {
+    height:400px;
+}
+a.a49 {
     /*群组链接*/
     color:#;
 }
-.abili {
+a.abili {
     /*b站链接*/
     color:#EE33EE;
 }
-.dtoptitle {
+div.dtoptitle {
     /*顶边悬浮栏*/
     opacity:90%;
     position:fixed;
@@ -45,7 +52,7 @@ a {
     border-bottom-width:2;
     border-bottom-color:#375165;
 }
-.dtotop {
+div.dtotop {
     /*回到顶部*/
     opacity:75%;
     position:fixed;
@@ -59,16 +66,18 @@ a {
     font-size:40px;
     color:#FFFFFF;
 }
-.op40 {
+div.op40 {
+    display:none;
+    /*
     opacity:40%;
     text-align:center;
-    /*background:url(https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg);*/
+    background:url(https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg);
     background-size:1400px 286px;
-    width:970px;
-    height:286px;
     background-position:center;
+    width:970px;
+    height:286px;*/
 }
-.dbody {
+div.dbody {
     border-radius:10px;
     -moz-border-radius:10px;
     top:100;
