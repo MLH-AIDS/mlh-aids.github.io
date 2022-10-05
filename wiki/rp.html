@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="shortcut icon" href="https://mlh-aids.github.io/IMG_20220831_172340.jpg" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href=".././style.css">
 <title>批量替换文字</title>
 <style tape="text-css">
 </style>
@@ -11,15 +11,12 @@
 <body>
 <div class="background01"><!--背景图--></div>
 <div class="dtoptitle"><p>Replace</p></div>
-<br/><br/><br/><br/>
+<p class="p1"><br/></p>
 <div class="op40"></div>
 <div class="dbody"><!--主要内容-->
 <textarea name="textarea" id="text" rows="10" cols="50"></textarea>
 <div>
-  查找<input
-    id="oldVal"
-    placeholder="要查找的内容"
-    value="">
+  查找<input id="oldVal" placeholder="要查找的内容" value="">
   替换<input id="newVal" placeholder="用来替换的内容">
   <button onclick="replace()">替换</button>
   <button onclick="replace('all')">全部替换</button>
