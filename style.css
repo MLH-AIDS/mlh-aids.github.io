@@ -55,13 +55,14 @@ div.dtoptitle {
 div.dtotop {
     /*回到顶部*/
     opacity:75%;
+    display:none;
     position:fixed;
     z-index:4;
     top:12;
     right:5;
     padding:3px;
     text-align:center;
-    background:#46DF11;
+    background:#4059BE;
     width:40px;
     font-size:40px;
     color:#FFFFFF;
