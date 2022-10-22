@@ -1,11 +1,15 @@
 body {
-    background-image:url(https://s1.imagehub.cc/images/2022/10/01/c8c3d009dbf499c47c64be4ca350622d.png),url(https://s1.imagehub.cc/images/2022/10/04/background90.png);/*前者为小背景，后者为大背景*/
+    background-image:url(https://s1.imagehub.cc/images/2022/10/19/ftbackground01.png),url(https://s1.imagehub.cc/images/2022/10/04/background90.png);/*前者为小背景，后者为大背景*/
     background-color:#274154;
     background-size:2100px 429px,auto;
     background-repeat:no-repeat,repeat;
     background-position:center 0px,0% 0%;
 }
-/*https://s1.imagehub.cc/images/2022/09/29/background01.png，覆盖层为78%。https://s1.imagehub.cc/images/2022/09/27/background.png，无覆盖层(原图)。*/
+/*
+ftbackground:
+https://s1.imagehub.cc/images/2022/10/01/c8c3d009dbf499c47c64be4ca350622d.png 原图
+大背景图:
+https://s1.imagehub.cc/images/2022/09/29/background01.png，覆盖层为78%。https://s1.imagehub.cc/images/2022/09/27/background.png，无覆盖层(原图)。*/
 a {
     color:#46df11;
 }
