@@ -12,6 +12,32 @@
     #label{box-sizing:border-box;display:inline-block;margin:0px;width:688px;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
     #con{margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:100%;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;}
     #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;}
+    .know{
+        background:#213B4E;
+        border:1 soild #466278;
+        border-radius:8px;
+        -moz-border-radius:8px;
+        width:200px;
+        color:#FFFFFF;
+        /*position:absolute;*/
+        right:5px;
+        float:right;
+    }
+    .know1{
+        font-weight:bold;
+        padding:20px;
+    }
+    #knowtxt{
+        padding:20px;
+    }
+    #semo1{
+        /*搜索模式1*/
+        display:inline;
+    }
+    #semo2{
+        /*搜索模式2*/
+        display:none;
+    }
   </style>
   <script language="javascript" type="text/javascript">
   //搜索框加入格式的js
@@ -33,11 +59,12 @@
 <div class="dtotop" id="dtotop" onclick="totop()"><strong><a title="回到顶部" style="color:#FFFFFF" >#</a></strong></div>
 <p class="p1"><br/></p>
 <div class="op40"><!--img src="https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg" alt="background" /--></div>
-<div class="dbody">
+<div class="dbody" style=""><!--主体区域开始-->
 <p style="font-size:12px;">特殊页面</p>
 <h1>搜索Wiki</h1>
 <hr/>
 <p><em>另请参阅：</em><a href="http://my.4399.com/forums/thread-62628228-hostonly-1">3D坦克 Wiki</a></p>
+<div id="semo1"><!--论坛内搜索模式开始-->
   <div id="fd01" style=""><!--搜索框开始-->
 	<form name="fo" id="fo" class="bodySearch" action="http://my.4399.com/forums/search" style="" autocomplete="on" method="get" target="_self">
 		<div id="fd02" style="">
@@ -48,10 +75,20 @@
 	</form>
   </div><!--搜索框结束-->
   <p><br/></p>
+  <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png"> 你知道吗</div><div id="knowtxt">(测试中，暂不可用)</div></div>
+  <p id="text00" style="display:none;"></p>
   <p><input type="submit" name="choose" id="choose" onclick="a()" value="加入格式：开" > （格式为“标题 - 3D坦克 Wiki”）</p>
   <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：关" ></p>
-  
-</div>
+   <p><input type="submit" class="choose3" name="choose3_1" id="choose3_1" onclick="c1()" value="搜索模式：论坛内搜索模式"></p>
+</div><!--论坛内搜索模式结束-->
+
+<div id="semo2"><!--累积搜索模式开始-->
+(本模式建设中，暂不可用)
+<p><input type="submit" class="choose3" name="choose3_2" id="choose3_2" onclick="c1()" value="搜索模式：论坛内搜索模式"></p>
+</div><!--累积搜索模式结束-->
+<hr/>
+<p>提示：<a href="https://en.tankiwiki.com/" target="_blank">en.tankiwiki.com</a>是官方wiki（英文）原地址。微软必应<a href="https://bing.com" target="_blank">bing.com</a>这个搜索引擎可以搜索到原网址里的每一个页面（要用英文，且要加一个tankionlinewiki才能搜到）</p>
+</div><!--dbody也就是主体区域结束-->
 
 
 
@@ -61,26 +98,58 @@ var button=document.getElementById('choose')
 var input=document.getElementById('tagid')
 var button2=document.getElementById('choose2')
 var fo=document.getElementById('fo')
+var button3=document.getElementById('choose3_1')
+var button3=document.getElementById('choose3_2')
+var semo1=document.getElementById('semo1')
+var semo2=document.getElementById('semo2')
 function a(){
+    //localStorage.removeItem("a1");
+    //localStorage.setItem("a1", "off");
     button.getAttributeNode('value').value=('加入格式：关');
     button.getAttributeNode('onclick').value=('b()');
     input.getAttributeNode('onclick').value=('null()');
 }
 function b(){
+    //localStorage.removeItem("a1");
+    //localStorage.setItem("a1", "on");
     button.getAttributeNode('value').value=('加入格式：开');
     button.getAttributeNode('onclick').value=('a()');
     input.getAttributeNode('onclick').value=('change()');
 }
+//if(localStorage.getItem("a1")=="off"{
+//    button.getAttributeNode('value').value=('加入格式：关');
+//    button.getAttributeNode('onclick').value=('b()');
+//    input.getAttributeNode('onclick').value=('null()');
+//}
 function a2(){
+    //localStorage.setItem("a2", "on");
     button2.getAttributeNode('value').value=('搜索打开在新窗口：开');
     button2.getAttributeNode('onclick').value=('b2()');
     fo.getAttributeNode('target').value=('_blank');
 }
 function b2(){
+    //localStorage.setItem("a2", "off");
     button2.getAttributeNode('value').value=('搜索打开在新窗口：关');
     button2.getAttributeNode('onclick').value=('a2()');
     fo.getAttributeNode('target').value=('_self');
 }
+function c1(){
+    button3.getAttributeNode('value').value=('搜索模式：累积搜索模式');
+    button3.getAttributeNode('onclick').value=('c2()');
+    semo1.style.display="none";
+    semo2.style.display="inline";
+}
+function c2(){
+    button3.getAttributeNode('value').value=('搜索模式：论坛内搜索模式');
+    button3.getAttributeNode('onclick').value=('c1()');
+    semo1.style.display="inline";
+    semo2.style.display="none";
+}
+/*
+var itxt = Math.floor(Math.random() * 11);
+document.getElementById("text00").innerHTML=itxt;
+if(document.querySelector("#text00")=7;){document.getElementById("knowtxt").innerHTML="非常好";}
+*/
 </script>
 <script type="text/javascript" src=".././totop.js" ></script>
 
