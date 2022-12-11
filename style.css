@@ -1,5 +1,5 @@
 body {
-    background-image:url(https://s1.imagehub.cc/images/2022/10/19/ftbackground01.png),url(https://s1.imagehub.cc/images/2022/10/04/background90.png);/*前者为小背景，后者为大背景*/
+    background-image:url(https://s1.imagehub.cc/images/2022/12/11/e5eb02ffcbf8b686a58a09559aee9212.png),url(https://s1.imagehub.cc/images/2022/12/11/df387db4f709b7e700f611e322f59996.png);/*前者为小背景，后者为大背景*/
     background-color:#274154;
     background-size:2100px 429px,auto;
     background-repeat:no-repeat,repeat;
@@ -85,9 +85,12 @@ div.op40 {
 div.dbody {
     border-radius:10px;
     -moz-border-radius:10px;
+    /*
     top:100;
     left:10;
     right:10;
+    */
+    width:96%;
     background:#FFFFFF;
     padding:6px;
     z-index:2;
