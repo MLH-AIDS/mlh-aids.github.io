@@ -1,16 +1,19 @@
 <!DOCTAPE html>
 <html>
 <head>
-<meta charset="utf-8"> 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Search Wiki</title>
 <link rel="shortcut icon" href="https://mlh-aids.github.io/photo/t_p_01.jpg" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href=".././style.css">
   <style tape="text-css">
-    #fd01{left:140;position:relative;box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:600px;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;}
-    #fo{box-sizing:border-box;border:none;margin:0px;width:650px;}
-    #fd02{box-sizing:border-box;display:flex;flex-flow:row wrap;}
-    #label{box-sizing:border-box;display:inline-block;margin:0px;width:688px;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
-    #con{margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:100%;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;}
+    #fd01{margin:0 auto;position:relative;box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:600px;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;
+    }
+    #fo{box-sizing:border-box;border:none;margin:0px;/*width:650px;*/}
+    #fd02{
+    box-sizing:border-box;display:flex;flex-flow:row wrap;}
+    #label{box-sizing:border-box;display:inline-block;margin:0px;max-width:688px;width:100%;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
+    #con{margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:600px;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;}
     #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;}
     .know{
         background:#213B4E;
@@ -66,16 +69,16 @@
 <p><em>另请参阅：</em><a href="http://my.4399.com/forums/thread-62628228-hostonly-1">3D坦克 Wiki</a></p>
 <div id="semo1"><!--论坛内搜索模式开始-->
   <div id="fd01" style=""><!--搜索框开始-->
-	<form name="fo" id="fo" class="bodySearch" action="http://my.4399.com/forums/search" style="" autocomplete="on" method="get" target="_self">
+	<form name="fo" id="fo" class="bodySearch" action="http://my.4399.com/forums/search" style="" autocomplete="off" method="get" target="_self">
 		<div id="fd02" style="">
-			<label id="label1" for="con" style="">SEARCH WIKI</label>
+			<label id="label1" for="con" style="">论坛内搜索论坛Wiki</label>
 			<input type="text" name="keyword"  size="50" id="con" placeholder="keyword" dir="ltr" style="" />
 			<input type="submit" id="tagid" name="tagid" value="81938" onclick="change();" style="" /><br />
 		</div>
 	</form>
   </div><!--搜索框结束-->
   <p><br/></p>
-  <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png"> 你知道吗</div><div id="knowtxt">(测试中，暂不可用)</div></div>
+  <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png"> 你知道吗</div><div id="knowtxt">[错误]</div></div>
   <p id="text00" style="display:none;"></p>
   <p><input type="submit" name="choose" id="choose" onclick="a()" value="加入格式：开" > （格式为“标题 - 3D坦克 Wiki”）</p>
   <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：关" ></p>
@@ -83,7 +86,40 @@
 </div><!--论坛内搜索模式结束-->
 
 <div id="semo2"><!--累积搜索模式开始-->
-(本模式建设中，暂不可用)
+<strong>(本模式建设中，暂不可用)</strong>
+<a href="http://my.4399.com/forums/thread-63067727" target="_blank">装备改造</a>
+<a href="http://my.4399.com/forums/thread-62993235" target="_blank">眩晕</a>
+<a href="http://my.4399.com/forums/thread-62991827" target="_blank">电磁脉冲</a>
+<a href="http://my.4399.com/forums/thread-62628228" target="_blank">3D坦克 Wiki（标准版目录）</a>
+<a href="http://my.4399.com/forums/thread-62628305" target="_blank">无人机</a>
+<a href="http://my.4399.com/forums/thread-62915412" target="_blank">测试服务器</a>
+<a href="http://my.4399.com/forums/thread-63012356" target="_blank">布鲁特斯</a>
+<a href="http://my.4399.com/forums/thread-63213249" target="_blank">社区</a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
+<a href="" target="_blank"></a>
 <p><input type="submit" class="choose3" name="choose3_2" id="choose3_2" onclick="c1()" value="搜索模式：论坛内搜索模式"></p>
 </div><!--累积搜索模式结束-->
 <hr/>
@@ -145,11 +181,19 @@ function c2(){
     semo1.style.display="inline";
     semo2.style.display="none";
 }
-/*
+
 var itxt = Math.floor(Math.random() * 11);
-document.getElementById("text00").innerHTML=itxt;
-if(document.querySelector("#text00")=7;){document.getElementById("knowtxt").innerHTML="非常好";}
-*/
+if(itxt>9){document.getElementById("knowtxt").innerHTML="Mammoth could have had a different name. While the heavy hull was still in development, the name “Goliath” was seriously being considered by the developers.";}
+else if(itxt>8){document.getElementById("knowtxt").innerHTML="The appearance of Shaft in June 2011 caused quite a furore among tankers. After the release, Shaft was bought at a rate of three pieces per second! Straight after that, it was changed and paints with protection from Shaft were released. On the next day, it was removed from players' Garages, the crystals were given back and the description was changed. Shaft was weak, so it was slightly improved and, before the release, there was an open testing in Test Server. On the first day of testing, the maximum damage of Shaft in aiming mode was 150 - 175 - 200 - 250 HP (for M0 - M1 - M2 - M3), on the second day was 200 - 225 - 275 - 300.";}
+else if(itxt>7){document.getElementById("knowtxt").innerHTML="In 2011, Developers decided to make a contest in which it was necessary to turn the turret constantly. A special map called Carousel was developed for this contest. It was assumed that players would not be able to use the supplies on that map (neither purchased nor bonus boxes). The map was never released. It is worth noting that the main designer of this map was the legendary mapmaker Figishe, who created a lot of maps. Now the map is considered to be lost.";}
+else if(itxt>6){document.getElementById("knowtxt").innerHTML="Not all Generalissimos were Field Marshals and Commanders before reaching their rank. Before the 17th of December 2012, the highest rank in the game was Marshal. When the new ranks were added, many Marshals had more than 1 400 000 experience points.";}
+else if(itxt>5){document.getElementById("knowtxt").innerHTML="On September 27, 2012, an extraordinary battle called «Kasim vs Sun» took place — the Community Manager of the Russian community, Maksim Khusainov, and Tech Support specialist, Kseniya Ignatyeva, fought against each other on Wasp + Smoky combination. Maksim won with a score of 22:19. Tankers could support Maksim and Kseniya by acquiring a special paint in the Garage that costed 100 crystals. 47 341 paints for Kasim were bought, 18 004 for Sun and 4 844 for both players — all those who bought the paint for Maksim received 59 crystals.";}
+else if(itxt>4){document.getElementById("knowtxt").innerHTML="The highly-anticipated mobile version of the game was not available all at once: it was released in various parts of the world over the course of a couple months following the first release, finally becoming available in all countries on December 27th, 2018. In the early versions, the controls were very limited, but over time, more features were added such as turret turning and automatic supply activation.";}
+else if(itxt>3){document.getElementById("knowtxt").innerHTML="In February 2011, a special modification of Smoky was introduced. It was named Smoky XT. This modification costed 3950 crystals, and it was available for purchase for only one week. Smoky XT was better than Smoky M3 in all aspects.";}
+else if(itxt>2){document.getElementById("knowtxt").innerHTML="Nauru, Kiribati, and Guinea-Bissau are the three countries with the smallest player population. In fact, there is only one tanker living in each of these three countries according to statistics.";}
+else if(itxt>1){document.getElementById("knowtxt").innerHTML="In the summer of 2015, the team of Tanki Online visited the gamescom game exhibition in Cologne, Germany. In honor of this event, a map named “Cologne” was introduced, on which Gold boxes worth 2000 crystals fell. During the event, 191 million crystals fell in Gold Boxes and the map was visited by about a million players.";}
+else if(itxt>0){document.getElementById("knowtxt").innerHTML="petraz was the first tanker who managed to get on top of Rio's skyscraper. He did it on the 1st of April 2014, during the event for the launch of Tanki Online in Brazil.";}
+else {document.getElementById("knowtxt").innerHTML="Back when paints offered protections from turrets, Forester was the most popular of all the paints. In December 2015, the paint was used in battles for a total of 1 258 208 hours. That is equal to 137 years!";}
 </script>
 <script type="text/javascript" src=".././totop.js" ></script>
 
