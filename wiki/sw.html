@@ -7,14 +7,14 @@
 <link rel="shortcut icon" href="https://mlh-aids.github.io/photo/t_p_01.jpg" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href=".././style.css">
   <style tape="text-css">
-    #fd01{margin:0 auto;position:relative;box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:600px;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;
+    #fd01{margin:0 auto;position:relative;box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;max-width:600px;width:100%;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;
     }
     #fo{box-sizing:border-box;border:none;margin:0px;/*width:650px;*/}
     #fd02{
     box-sizing:border-box;display:flex;flex-flow:row wrap;}
     #label{box-sizing:border-box;display:inline-block;margin:0px;max-width:688px;width:100%;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
-    #con{margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:600px;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;}
-    #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;}
+    #con{margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;/*width:100%*/;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:600px;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;}
+    #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background-image:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');background-position:center center;min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;}
     .know{
         background:#213B4E;
         border:1 soild #466278;
@@ -28,10 +28,15 @@
     }
     .know1{
         font-weight:bold;
+        border-radius:8px;
+        -moz-border-radius:8px;
         padding:20px;
+        padding-bottom:10px;
+        background:#1E374A;
     }
     #knowtxt{
         padding:20px;
+        padding-top:10px;
     }
     #semo1{
         /*搜索模式1*/
@@ -78,11 +83,11 @@
 	</form>
   </div><!--搜索框结束-->
   <p><br/></p>
-  <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png"> 你知道吗</div><div id="knowtxt">[错误]</div></div>
-  <p id="text00" style="display:none;"></p>
+  <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png"><!--img src="photo/user_icon.png"-->&nbsp;你知道吗</div><div id="knowtxt">[错误]</div></div>
   <p><input type="submit" name="choose" id="choose" onclick="a()" value="加入格式：开" > （格式为“标题 - 3D坦克 Wiki”）</p>
   <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：关" ></p>
    <p><input type="submit" class="choose3" name="choose3_1" id="choose3_1" onclick="c1()" value="搜索模式：论坛内搜索模式"></p>
+     <a href="http://my.4399.com/forums/thread-62628228-hostonly-1"><img src="https://s1.imagehub.cc/images/2022/12/14/bc6e66a7ea53d4a4ba850bf359d0d30e.gif" alt="Tanki_Online_Wiki" border="0" /></a>
 </div><!--论坛内搜索模式结束-->
 
 <div id="semo2"><!--累积搜索模式开始-->
@@ -182,18 +187,19 @@ function c2(){
     semo2.style.display="none";
 }
 
-var itxt = Math.floor(Math.random() * 11);
-if(itxt>9){document.getElementById("knowtxt").innerHTML="Mammoth could have had a different name. While the heavy hull was still in development, the name “Goliath” was seriously being considered by the developers.";}
-else if(itxt>8){document.getElementById("knowtxt").innerHTML="The appearance of Shaft in June 2011 caused quite a furore among tankers. After the release, Shaft was bought at a rate of three pieces per second! Straight after that, it was changed and paints with protection from Shaft were released. On the next day, it was removed from players' Garages, the crystals were given back and the description was changed. Shaft was weak, so it was slightly improved and, before the release, there was an open testing in Test Server. On the first day of testing, the maximum damage of Shaft in aiming mode was 150 - 175 - 200 - 250 HP (for M0 - M1 - M2 - M3), on the second day was 200 - 225 - 275 - 300.";}
-else if(itxt>7){document.getElementById("knowtxt").innerHTML="In 2011, Developers decided to make a contest in which it was necessary to turn the turret constantly. A special map called Carousel was developed for this contest. It was assumed that players would not be able to use the supplies on that map (neither purchased nor bonus boxes). The map was never released. It is worth noting that the main designer of this map was the legendary mapmaker Figishe, who created a lot of maps. Now the map is considered to be lost.";}
-else if(itxt>6){document.getElementById("knowtxt").innerHTML="Not all Generalissimos were Field Marshals and Commanders before reaching their rank. Before the 17th of December 2012, the highest rank in the game was Marshal. When the new ranks were added, many Marshals had more than 1 400 000 experience points.";}
-else if(itxt>5){document.getElementById("knowtxt").innerHTML="On September 27, 2012, an extraordinary battle called «Kasim vs Sun» took place — the Community Manager of the Russian community, Maksim Khusainov, and Tech Support specialist, Kseniya Ignatyeva, fought against each other on Wasp + Smoky combination. Maksim won with a score of 22:19. Tankers could support Maksim and Kseniya by acquiring a special paint in the Garage that costed 100 crystals. 47 341 paints for Kasim were bought, 18 004 for Sun and 4 844 for both players — all those who bought the paint for Maksim received 59 crystals.";}
-else if(itxt>4){document.getElementById("knowtxt").innerHTML="The highly-anticipated mobile version of the game was not available all at once: it was released in various parts of the world over the course of a couple months following the first release, finally becoming available in all countries on December 27th, 2018. In the early versions, the controls were very limited, but over time, more features were added such as turret turning and automatic supply activation.";}
-else if(itxt>3){document.getElementById("knowtxt").innerHTML="In February 2011, a special modification of Smoky was introduced. It was named Smoky XT. This modification costed 3950 crystals, and it was available for purchase for only one week. Smoky XT was better than Smoky M3 in all aspects.";}
-else if(itxt>2){document.getElementById("knowtxt").innerHTML="Nauru, Kiribati, and Guinea-Bissau are the three countries with the smallest player population. In fact, there is only one tanker living in each of these three countries according to statistics.";}
-else if(itxt>1){document.getElementById("knowtxt").innerHTML="In the summer of 2015, the team of Tanki Online visited the gamescom game exhibition in Cologne, Germany. In honor of this event, a map named “Cologne” was introduced, on which Gold boxes worth 2000 crystals fell. During the event, 191 million crystals fell in Gold Boxes and the map was visited by about a million players.";}
-else if(itxt>0){document.getElementById("knowtxt").innerHTML="petraz was the first tanker who managed to get on top of Rio's skyscraper. He did it on the 1st of April 2014, during the event for the launch of Tanki Online in Brazil.";}
-else {document.getElementById("knowtxt").innerHTML="Back when paints offered protections from turrets, Forester was the most popular of all the paints. In December 2015, the paint was used in battles for a total of 1 258 208 hours. That is equal to 137 years!";}
+var itxt = Math.floor(Math.random() * 12);//变量itxt的值取0~11之间整数
+if(itxt>10){document.getElementById("knowtxt").innerHTML="猛犸象本可以有不同的名字。当重型底盘仍在开发中时，开发人员正在认真考虑“歌利亚”这个名字。";}
+else if(itxt>9){document.getElementById("knowtxt").innerHTML="2011年6月镭射炮的出现引起了坦克手们的轰动。发布后，镭射炮以每秒三件的速度被购买！紧接着，它被更改并释放了具有镭射炮保护的迷彩。第二天，它从玩家的车库中移除，水晶被归还，描述也发生了变化。镭射炮很弱，所以它略有改进，在发布之前，测试服务器中有一个开放的测试。在测试的第一天，瞄准模式下镭射炮的最大伤害为 150 - 175 - 200 - 250 HP（对于 M0 - M1 - M2 - M3），第二天为 200 - 225 - 275 - 300。";}
+else if(itxt>8){document.getElementById("knowtxt").innerHTML="2011年，开发人员决定进行一场竞赛，其中必须不断转动炮塔。为本次比赛开发了一张名为旋转木马的特殊地图。假设玩家将无法使用该地图上的道具（既不是购买的，也不是空投箱）。该地图从未发布。值得注意的是，这张地图的主要设计师是传奇的制图师Figishe，他创作了很多地图。现在地图被认为丢失了。";}
+else if(itxt>7){document.getElementById("knowtxt").innerHTML="并非所有大元帅在达到军衔之前都是陆军元帅和统帅。在2012年12月17日之前，游戏中的最高军衔是元帅。当新军衔加入时，许多元帅拥有超过1 400 000点经验值。";}
+else if(itxt>6){document.getElementById("knowtxt").innerHTML="2012 年 9 月 27 日，一场名为“卡西姆对太阳”的非凡战斗发生了——俄罗斯社区的社区经理马克西姆·胡赛诺夫和技术支持专家克谢尼亚·伊格纳季耶娃在黄蜂轻甲 + 轰天炮组合上相互对抗。马克西姆以22：19的比分获胜。坦克手可以通过在车库中购买价值 100 水晶的特殊迷彩来支持马克西姆和克塞尼亚。为卡西姆购买了47 341个迷彩，为太阳购买了18 004个，为两位玩家购买了4 844个 - 所有为马克西姆购买迷彩的人都收到了59个水晶。";}
+else if(itxt>5){document.getElementById("knowtxt").innerHTML="备受期待的游戏移动版本并非一下子全部可用：它在首次发布后的几个月内在世界各地发布，最终于 2018 年 12 月 27 日在所有国家/地区推出。在早期版本中，控制非常有限，但随着时间的推移，添加了更多功能，例如炮塔转动和自动道具激活。";}
+else if(itxt>4){document.getElementById("knowtxt").innerHTML="2011年2月，引入了对轰天炮的特殊修改。它被命名为轰天炮 XT。这种修改花费了3950个水晶，并且只能购买一周。轰天炮 XT在各个方面都比轰天炮 M3好。";}
+else if(itxt>3){document.getElementById("knowtxt").innerHTML="瑙鲁、基里巴斯和几内亚比绍是玩家人数最少的三个国家。事实上，据统计，这三个国家中的每一个国家都只有一名坦克手。";}
+else if(itxt>2){document.getElementById("knowtxt").innerHTML="2015年夏天，Tanki Online团队参观了德国科隆的科隆游戏展。为了纪念这一事件，引入了一张名为“科隆”的地图，价值 2000 个水晶的金箱子落在上面。在活动期间，1.91亿颗水晶落在金箱子中，约有100万玩家访问了地图。";}
+else if(itxt>1){document.getElementById("knowtxt").innerHTML="佩特拉兹是第一艘设法登上里约摩天大楼顶部的油轮。他于2014年4月1日在巴西推出Tanki Online的活动中做到了这一点。";}
+else if(itxt>0){document.getElementById("knowtxt").innerHTML="当迷彩提供炮塔保护时，福雷斯特是所有迷彩中最受欢迎的。2015年12月，该迷彩在战斗中使用了1 258 208小时。这等于137年！";}
+else {document.getElementById("knowtxt").innerHTML="其他玩家坦克顶部的主动道具指示在道具发布半年后才被添加到游戏中。在此之前，您必须猜测敌人是否激活了双倍伤害/双倍护甲。";}
 </script>
 <script type="text/javascript" src=".././totop.js" ></script>
 
