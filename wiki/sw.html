@@ -7,20 +7,25 @@
 <link rel="shortcut icon" href="https://mlh-aids.github.io/photo/t_p_01.jpg" type="image/x-icon" />
 <link rel="stylesheet" type="text/css" href=".././style.css">
   <style tape="text-css">
-    #fd01{margin:0 auto;position:relative;box-sizing:border-box;position:relative;display:flex;flex-wrap:wrap;align-items:stretch;max-width:600px;width:100%;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;
+    .dbody{overflow: scroll;}
+    #fd01{
+        margin:0 auto;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:stretch;max-width:600px;width:100%;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;
     }
-    #fo{box-sizing:border-box;border:none;margin:0px;/*width:650px;*/}
+    #fo{box-sizing:border-box;border:none;margin:0px;max-width:650px;width:100%;}
     #fd02{
     box-sizing:border-box;display:flex;flex-flow:row wrap;}
-    #label{box-sizing:border-box;display:inline-block;margin:0px;max-width:688px;width:100%;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
-    #con{margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;color:#FFFFFF;background:#1A3346;/*width:100%*/;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:600px;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;}
-    #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background-image:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');background-position:center center;min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:80px;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;}
+    #label{box-sizing:border-box;display:inline-block;margin:0px;max-width:600px;width:100%;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
+    #con{
+        margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;
+        color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:auto;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;
+    }
+    #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background-image:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');background-position:center center;min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:13%;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;}
     .know{
         background:#213B4E;
         border:1 soild #466278;
         border-radius:8px;
         -moz-border-radius:8px;
-        width:200px;
+        width:180px;
         color:#FFFFFF;
         /*position:absolute;*/
         right:5px;
@@ -30,13 +35,15 @@
         font-weight:bold;
         border-radius:8px;
         -moz-border-radius:8px;
-        padding:20px;
-        padding-bottom:10px;
+        padding:15px;
+        padding-bottom:7px;
         background:#1E374A;
     }
     #knowtxt{
-        padding:20px;
-        padding-top:10px;
+        padding:15px;
+        padding-top:7px;
+        overflow: scroll;
+        max-height:310px;
     }
     #semo1{
         /*搜索模式1*/
@@ -86,8 +93,8 @@
   <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png"><!--img src="photo/user_icon.png"-->&nbsp;你知道吗</div><div id="knowtxt">[错误]</div></div>
   <p><input type="submit" name="choose" id="choose" onclick="a()" value="加入格式：开" > （格式为“标题 - 3D坦克 Wiki”）</p>
   <p><input type="submit" name="choose2" id="choose2" onclick="a2()" value="搜索打开在新窗口：关" ></p>
-   <p><input type="submit" class="choose3" name="choose3_1" id="choose3_1" onclick="c1()" value="搜索模式：论坛内搜索模式"></p>
-     <a href="http://my.4399.com/forums/thread-62628228-hostonly-1"><img src="https://s1.imagehub.cc/images/2022/12/14/bc6e66a7ea53d4a4ba850bf359d0d30e.gif" alt="Tanki_Online_Wiki" border="0" /></a>
+   <p><input type="submit" class="choose3" name="choose3_1" id="choose3_1" onclick="c1()" value="搜索模式：论坛内搜索"></p>
+     <a href="http://my.4399.com/forums/thread-62628228-hostonly-1"><img src="https://s1.imagehub.cc/images/2022/12/14/bc6e66a7ea53d4a4ba850bf359d0d30e.gif" alt="Tanki_Online_Wiki" style="max-width:480;width:100%;" /></a>
 </div><!--论坛内搜索模式结束-->
 
 <div id="semo2"><!--累积搜索模式开始-->
@@ -125,7 +132,7 @@
 <a href="" target="_blank"></a>
 <a href="" target="_blank"></a>
 <a href="" target="_blank"></a>
-<p><input type="submit" class="choose3" name="choose3_2" id="choose3_2" onclick="c1()" value="搜索模式：论坛内搜索模式"></p>
+<p><input type="submit" class="choose3" name="choose3_2" id="choose3_2" onclick="c1()" value="搜索模式：论坛内搜索"></p>
 </div><!--累积搜索模式结束-->
 <hr/>
 <p>提示：<a href="https://en.tankiwiki.com/" target="_blank">en.tankiwiki.com</a>是官方wiki（英文）原地址。微软必应<a href="https://bing.com" target="_blank">bing.com</a>这个搜索引擎可以搜索到原网址里的每一个页面（要用英文，且要加一个tankionlinewiki才能搜到）</p>
@@ -175,13 +182,13 @@ function b2(){
     fo.getAttributeNode('target').value=('_self');
 }
 function c1(){
-    button3.getAttributeNode('value').value=('搜索模式：累积搜索模式');
+    button3.getAttributeNode('value').value=('搜索模式：累积搜索');
     button3.getAttributeNode('onclick').value=('c2()');
     semo1.style.display="none";
     semo2.style.display="inline";
 }
 function c2(){
-    button3.getAttributeNode('value').value=('搜索模式：论坛内搜索模式');
+    button3.getAttributeNode('value').value=('搜索模式：论坛内搜索');
     button3.getAttributeNode('onclick').value=('c1()');
     semo1.style.display="inline";
     semo2.style.display="none";
@@ -197,7 +204,7 @@ else if(itxt>5){document.getElementById("knowtxt").innerHTML="备受期待的游
 else if(itxt>4){document.getElementById("knowtxt").innerHTML="2011年2月，引入了对轰天炮的特殊修改。它被命名为轰天炮 XT。这种修改花费了3950个水晶，并且只能购买一周。轰天炮 XT在各个方面都比轰天炮 M3好。";}
 else if(itxt>3){document.getElementById("knowtxt").innerHTML="瑙鲁、基里巴斯和几内亚比绍是玩家人数最少的三个国家。事实上，据统计，这三个国家中的每一个国家都只有一名坦克手。";}
 else if(itxt>2){document.getElementById("knowtxt").innerHTML="2015年夏天，Tanki Online团队参观了德国科隆的科隆游戏展。为了纪念这一事件，引入了一张名为“科隆”的地图，价值 2000 个水晶的金箱子落在上面。在活动期间，1.91亿颗水晶落在金箱子中，约有100万玩家访问了地图。";}
-else if(itxt>1){document.getElementById("knowtxt").innerHTML="佩特拉兹是第一艘设法登上里约摩天大楼顶部的油轮。他于2014年4月1日在巴西推出Tanki Online的活动中做到了这一点。";}
+else if(itxt>1){document.getElementById("knowtxt").innerHTML="佩特拉兹是第一个设法登上里约摩天大楼顶部的坦克手。他于2014年4月1日在巴西推出Tanki Online的活动中做到了这一点。";}
 else if(itxt>0){document.getElementById("knowtxt").innerHTML="当迷彩提供炮塔保护时，福雷斯特是所有迷彩中最受欢迎的。2015年12月，该迷彩在战斗中使用了1 258 208小时。这等于137年！";}
 else {document.getElementById("knowtxt").innerHTML="其他玩家坦克顶部的主动道具指示在道具发布半年后才被添加到游戏中。在此之前，您必须猜测敌人是否激活了双倍伤害/双倍护甲。";}
 </script>
