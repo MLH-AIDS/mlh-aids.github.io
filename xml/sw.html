@@ -54,7 +54,7 @@
         display:none;
     }
   </style>
-  <script type="text/javascript" src="./loadxmldoc.js" ></script>
+  <script type="text/javascript" src="./xml/loadxmldoc.js" ></script>
 </head>
 
 <body>
@@ -204,17 +204,25 @@ function c1(){
 //以下是 你知道吗 的js
 
 xmlDoc=loadXMLDoc("know.xml");
-xx=xmlDoc.getElementsByTagName("knowtxt");
-//alert(xx[0].childNodes[0].nodeValue);
-var senma=xx.length+1//变量senma是句子数量+1
+x=xmlDoc.getElementsByTagName("knowa");
+var senma=x.length+1//变量senma是句子数量+1
 var itxt = Math.floor(Math.random() * senma);//变量itxt的值取0~senma-1之间整数
 var knowtxt = document.getElementById("knowtxt");
 for (var i=0; i<senma; i++){
-      if(itxt==i){knowtxt.innerHTML=xx[0].childNodes[i].nodeValue;}
+      if(itxt==i){knowtxt.innerHTML=x[i].childNodes[0].nodeValue;}
 }
-function alebg(){
-alert(xx[0]+"，"+xx[0].childNodes[i].nodeValue)
+function ale(){
+alert(x[0].childNodes[0].nodeValue);
 }
+/*
+xmlDoc=loadXMLDoc("books.xml");
+x=xmlDoc.getElementsByTagName("title");
+for (i=0;i<x.length;i++)
+{ 
+	document.write(x[i].childNodes[0].nodeValue);
+	document.write("<br>");
+	alert(x[i].childNodes[0].nodeValue);
+}*/
 </script>
 <script type="text/javascript" src=".././totop.js" ></script>
 
