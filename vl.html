@@ -1,0 +1,43 @@
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"> 
+<title>访客</title>
+<link rel="shortcut icon" href="https://mlh-aids.github.io/photo/t_p_01.jpg" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<style tape="text-css">
+</style>
+</head>
+<body>
+<div class="background01"><!--背景图--></div>
+<div class="dtoptitle"><p>访客</p></div>
+<div class="dtotop" onclick="totop()" id="dtotop"><strong><a style="color:#FFFFFF" href="">#</a></strong></div><!--俩悬浮div-->
+<p class="p1"><br/></p>
+<div class="op40"></div>
+<div class="dbody"><!--主要内容-->
+  <h1>4399游戏吧访客查询</h1>
+  <form onsubmit="return openw()">
+      <input type="number" id="theuid" min="0" step="1" required>
+      <input type="submit">
+  </form>
+  <br/>
+  新窗口<input type="checkbox" checked id="vtarget">
+  <p>请在上面填入你的4399uid。填入0时转至<a href="https://my.4399.com/u/0/visitor-list">你当前登录4399账号的访客</a></p>
+  <noscript>noscript</noscript>
+</div><!--主要内容结束-->
+<script>
+function openw(){
+    var uid=document.getElementById("theuid").value;
+    var vurl;
+    vurl="https://my.4399.com/u/" + uid + "/visitor-list";
+    vtarget=document.getElementById("vtarget").checked;
+    if(vtarget==true){
+        window.open(vurl,"_blank");
+    }else{
+        window.open(vurl,"_self");
+    }
+    return false;
+}
+</script>
+<script type="text/javascript" src="totop.js" ></script>
+</body>
+</html>
