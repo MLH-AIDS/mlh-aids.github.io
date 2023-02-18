@@ -120,7 +120,7 @@ function a3(){
 xmlDoc1=loadXMLDoc("ljurl.xml");
 urlx=xmlDoc1.getElementsByTagName("url");
 textx=xmlDoc1.getElementsByTagName("text");
-setTimeOut(function(){for(var i=0;i<urlx.length;i++){
+setTimeout(function(){for(var i=0;i<urlx.length;i++){
     document.getElementById("ljurl").innerHTML+='<a class="sma1" href="http://my.4399.com/forums/thread-' + urlx[i].childNodes[0].nodeValue + '" target="_blank">' + textx[i].childNodes[0].nodeValue + '</a>';
 } },1000)
 </script>
