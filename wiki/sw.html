@@ -9,7 +9,7 @@
 <link rel="stylesheet" type="text/css" href="./swstyle.css">
   <style tape="text-css">
   </style>
-<script type="text/javascript" src="./loadxmldoc.js" ></script><!--载入xml -->
+<script type="text/javascript" src="https://mlh-aids.github.io/xml/loadxmldoc.js" ></script><!--载入xml -->
 </head>
 
 <body>
@@ -123,7 +123,7 @@ textx=xmlDoc1.getElementsByTagName("text");
 for(var i=0;i<urlx.length;i++){
     var url=urlx[i].childNodes[0].nodeValue;
     var text=textx[i].childNodes[0].nodeValue;
-    document.getElementById("ljurl").innerHTML+='<a class="sma1" href="http://my.4399.com/forums/thread-' + url + '" target="_blank">' + text + '</a>';
+    document.getElementById("ljurl").innerHTML+='<a class="sma1" href="http://my.4399.com/forums/thread-' + urlx + '" target="_blank">' + textx + '</a>';
 }
 </script>
 
