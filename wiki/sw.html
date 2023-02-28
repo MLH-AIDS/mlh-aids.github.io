@@ -23,10 +23,11 @@
 <p style="font-size:12px;">特殊页面</p>
 <h1>搜索Wiki</h1>
 <hr/>
+<div style="float:right;"><select id="bu_s3_b" onchange="a3()"><option value="semo1">论坛内搜索</option><option value="semo2">累积搜索</option></select></div>
 <p><em>另请参阅：</em><a href="http://my.4399.com/forums/thread-62628228-hostonly-1">3D坦克 Wiki</a></p>
 <div id="semo1"><!--论坛内搜索模式开始-->
   <div id="fd01" style=""><!--搜索框开始-->
-	<form name="fo" id="fo" class="bodySearch" action="http://my.4399.com/forums/search" style="" autocomplete="off" method="get" target="_self">
+	<form name="fo" id="fo" class="bodySearch" action="http://my.4399.com/forums/search" style="" autocomplete="off" method="get" target="_self" onsubmit="return sech_a()">
 		<div id="fd02" style="">
 			<label id="label1" for="con" style="">搜索模式：论坛内搜索功能搜索论坛Wiki</label>
 			<input type="text" name="keyword"  size="50" id="con" placeholder="keyword" dir="ltr" style="" />
@@ -34,101 +35,85 @@
 		</div>
 	</form>
   </div><!--搜索框结束-->
-  <p><br/></p>
+  <br/>
   <div class="know"><div class="know1"><img src="https://en.tankiwiki.com/images/en/8/81/User_icon.png" width="16px" height="16px"><!--img src="photo/user_icon.png"-->&nbsp;你知道吗</div><div id="knowtxt">[错误]<noscript>JavaScript未运行</noscript></div></div>
    
-   
-   <p><button id="choose1" onclick="a1()">加入格式：<span id="bu_s1">开</span></button> （格式为“标题 - 3D坦克 Wiki”）</p>
-   <p><button id="choose2" onclick="a2()">搜索打开在新窗口：<span id="bu_s2">关</span></button></p>
-   <p><button class="choose3" id="choose3_1" onclick="a3()">搜索模式：<span id="bu_s3">论坛内搜索</span></button></p>
-   
-   
+   <p>加入格式<input type="checkbox" id="cgs" checked onchange="a1()"></p>
+   <p>搜索打开在新窗口<input type="checkbox" id="ctg" checked onchange="a2()"></p>
+   <p style="color:#555;">[提示：格式为句末加<em>“ - 3D坦克 Wiki”</em>]</p>
      <a href="http://my.4399.com/forums/thread-62628228-hostonly-1"><img src="https://s1.imagehub.cc/images/2022/12/14/bc6e66a7ea53d4a4ba850bf359d0d30e.gif" alt="Tanki_Online_Wiki" style="max-width:480px;width:100%;max-height:272px;" /></a>
 </div><!--论坛内搜索模式结束-->
 
 <div id="semo2"><!--累积搜索模式开始-->
 <strong>(本模式建设中，暂不可用)</strong>
+<input type="text" name="keyword"  size="50" id="con2" placeholder="keyword" dir="ltr" style="" onchange="sm2_se()"/>
 <a class="sma1" href="" target="_blank"></a>
+<div id="ljjg"></div>
 <div id="ljurl"></div>
-<p><button class="choose3" id="choose3_2" onclick="a3()">搜索模式：累积搜索</button></p>
 </div><!--累积搜索模式结束-->
 <hr/>
 <p>提示：<a href="https://en.tankiwiki.com/" target="_blank">en.tankiwiki.com</a>是官方wiki（英文）原地址。微软必应<a href="https://bing.com" target="_blank">bing.com</a>这个搜索引擎可以搜索到原网址里的每一个页面（要用英文，且要加一个tankionlinewiki才能搜到）</p>
 </div><!--dbody也就是主体区域结束-->
 
 
-<script type="text/javascript" src="swj.js" ></script><!-- 搜索框加入格式的js -->
+
+<script>
+function dgbyid(ysid){
+return document.getElementById(ysid);
+}
+</script>
+
 
 <script language="javascript" type="text/javascript">
-//搜索框设置按钮的js，a1 加入格式，a2 新窗口，a3 搜索模式
-var ao1=1;
-function a1(){
-    var bu_s1=document.getElementById('bu_s1');
-    if(ao1==1){
-        bu_s1.innerHTML='关';
-        ao1=0;
-    }else{
-        bu_s1.innerHTML='开';
-        ao1=1;
-    }
-}
-var ao2=1;
-function a2(){
-    var fo=document.getElementById('fo').getAttributeNode('target');
-    var bu_s2=document.getElementById('bu_s2');
-    if(ao2==1){
-        bu_s2.innerHTML='开';
-        fo.value=('_blank');
-        ao2=0;
-    }else{
-        bu_s2.innerHTML='关';
-        fo.value=('_self');
-        ao2=1;
-    }
-}
-var ao3=1;
+//搜索框设置按钮的js，加入格式，新窗口，搜索模式
+var con=dgbyid("con");
 function a3(){
-    var semo1=document.getElementById('semo1').style;
-    var semo2=document.getElementById('semo2').style;
-    if(ao3==1){
-        semo1.display="none";
-        semo2.display="inline";
-        ao3=0;
-    }else{
-        semo1.display="inline";
-        semo2.display="none";
-        ao3=1;
-    }
+for(var i=1;i<3;i++){dgbyid('semo'+i).style.display='none';}
+dgbyid(dgbyid("bu_s3_b").options[dgbyid("bu_s3_b").selectedIndex].value).style.display="inline";
+}
+function sech_a(){
+var target="_self";
+var change="";
+if(dgbyid("cgs").checked){change=" - 3D坦克 Wiki"}
+var url=dgbyid("fo").action+"?keyword="+con.value+change+"&tagid=81938";
+if(dgbyid("ctg").checked){target="_blank";}
+window.open(url,target);
+return false;
+}
+//移动端ui调整
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    con.style.width="240px";
+    var dttitp=document.getElementsByClassName("dtoptitle")[0].childNodes[0].style;
+    dttitp.lineHeight="15px";
+    dttitp.fontSize="20px";
+    var dtt=dgbyid("dtotop").style;
+    dtt.fontSize="30px";
+    dtt.top="5";
 }
 
-
-    if (isMobile()) {
-        document.getElementById("con").style.width="240px";
-        var dttitp=document.getElementsByClassName("dtoptitle")[0].childNodes[0];
-        dttitp.style.lineHeight="15px";
-        dttitp.style.fontSize="20px";
-        var dtt=document.getElementById("dtotop");
-        dtt.style.fontSize="30px";
-        dtt.style.top="5";
-    }
-    function isMobile() {
-        let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        return flag;
-    }
-
-
+//累积搜索
 xmlDoc1=loadXMLDoc("ljurl.xml");
 urlx=xmlDoc1.getElementsByTagName("url");
 textx=xmlDoc1.getElementsByTagName("text");
 setTimeout(function(){for(var i=0;i<urlx.length;i++){
-    document.getElementById("ljurl").innerHTML+='<a class="sma1" href="http://my.4399.com/forums/thread-' + urlx[i].childNodes[0].nodeValue + '" target="_blank">' + textx[i].childNodes[0].nodeValue + '</a>';
-} },1000)
+    dgbyid("ljurl").innerHTML+='<a class="sma1" href="http://my.4399.com/forums/thread-' + urlx[i].childNodes[0].nodeValue + '" target="_blank">' + textx[i].childNodes[0].nodeValue + '</a>';
+}},1000);
+function sm2_se(){
+    var str=dgbyid(con2).value;
+    var sejg="";
+    for(var i=0;i<textx.length;i++){
+        if(textx[i].childNodes[0].nodeValue.indexOf(str)!=-1){
+            sejg=sejg+"<p><a href='"+urlx[i].childNodes[0].nodeValue+"'>"+textx[i].childNodes[0].nodeValue+"</a></p>";
+        }
+    }
+    dgbyid(ljjg).innerHTML=sejg;
+}
+
 </script>
 
 <script type="text/javascript" src="know.json" ></script>
-<script type="text/javascript" src="know_json.js" ></script>
-<!-- “你知道吗？”的js(载入json版) -->
-<!-- <script type="text/javascript" src="./know_xml.js" ></script>载入xml版 -->
+<script type="text/javascript" src="know.js" ></script>
+<!-- “你知道吗？”的js -->
 <script type="text/javascript" src=".././totop.js" ></script>
 <!-- 回到顶部的js -->
 
