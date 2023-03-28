@@ -8,15 +8,29 @@
 <link rel="stylesheet" type="text/css" href=".././style.css">
 <link rel="stylesheet" type="text/css" href="./swstyle.css">
   <style tape="text-css">
+@media only screen and (max-width: 768px) {
+  /* 针对手机： */
+  #con,#con2 {
+    width:240px;
+  }
+  .dtoptitle p{
+    line-height:15px;
+    font-size:20px;
+  }
+  #dtotop{
+    font-size:30px;
+    top:5;
+  }
+}
   </style>
 <script type="text/javascript" src="https://mlh-aids.github.io/xml/loadxmldoc.js" ></script><!--载入xml -->
 </head>
 
-<body>
+<body onpageshow="a3()">
 
 <div class="background01"><!--背景图--></div>
 <div class="dtoptitle"><p>SEARCH WIKI</p></div>
-<div class="dtotop" id="dtotop" onclick="totop()"><strong><a title="回到顶部" style="color:#FFFFFF" >#</a></strong></div>
+<div class="dtotop" id="dtotop" onclick="totop()"><a title="回到顶部" >#</a></div>
 <p class="p1"><br/></p>
 <div class="op40"><!--img src="https://user-images.githubusercontent.com/110889622/183624693-c2f3ac8c-8147-4b9e-8239-e114108ca914.jpg" alt="background" /--></div>
 <div class="dbody" style=""><!--主体区域开始-->
@@ -45,11 +59,18 @@
 </div><!--论坛内搜索模式结束-->
 
 <div id="semo2"><!--累积搜索模式开始-->
-<strong>(本模式建设中，暂不可用)</strong>
-<input type="text" name="keyword"  size="50" id="con2" placeholder="keyword" dir="ltr" style="" onchange="sm2_se()"/>
-<a class="sma1" href="" target="_blank"></a>
+<div id="fd01b" style=""><!--搜索框开始-->
+	<form id="fob" class="bodySearch" style="" autocomplete="off" onsubmit="return false">
+		<div id="fd02b" style="">
+			<label id="label2" for="con" style="">搜索模式：本站累积搜索功能搜索论坛Wiki</label>
+			<input type="text" size="50" id="con2" placeholder="keyword" dir="ltr" style="" oninput="sm2_se()"/><input type="submit" class="sm2sub" value="搜索" onclick="sm2_se()" style="" /><br />
+		</div>
+	</form>
+  </div><!--搜索框结束-->
 <div id="ljjg"></div>
-<div id="ljurl"></div>
+<p>搜索打开在新窗口<input type="checkbox" id="sm2ctg" checked onchange="b2()"></p>
+<div id="ljurl">搜索库：</div>
+<p>本模式搜索库完善中</p>
 </div><!--累积搜索模式结束-->
 <hr/>
 <p>提示：<a href="https://en.tankiwiki.com/" target="_blank">en.tankiwiki.com</a>是官方wiki（英文）原地址。微软必应<a href="https://bing.com" target="_blank">bing.com</a>这个搜索引擎可以搜索到原网址里的每一个页面（要用英文，且要加一个tankionlinewiki才能搜到）</p>
@@ -60,6 +81,9 @@
 <script>
 function dgbyid(ysid){
 return document.getElementById(ysid);
+}
+function dgbycn(yscn){
+return document.getElementsByClassName(yscn);
 }
 </script>
 
@@ -80,9 +104,20 @@ if(dgbyid("ctg").checked){target="_blank";}
 window.open(url,target);
 return false;
 }
+
+function b2(){
+if(dgbyid("sm2ctg").checked){
+b2for("_blank");
+}else{b2for("self");}
+}
+function b2for(tg){for(var i=0;i<Array.prototype.slice.call(dgbycn("sma1")).length;i++){
+dgbycn("sma1")[i].target=tg;
+}}
 //移动端ui调整
+/*
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     con.style.width="240px";
+    dgbyid("con2").style.width="240px";
     var dttitp=document.getElementsByClassName("dtoptitle")[0].childNodes[0].style;
     dttitp.lineHeight="15px";
     dttitp.fontSize="20px";
@@ -90,23 +125,25 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     dtt.fontSize="30px";
     dtt.top="5";
 }
-
+*/
 //累积搜索
-xmlDoc1=loadXMLDoc("ljurl.xml");
+xmlDoc1=loadXMLDoc("https://mlh-aids.github.io/wiki/ljurl.xml");
 urlx=xmlDoc1.getElementsByTagName("url");
-textx=xmlDoc1.getElementsByTagName("text");
+textx=xmlDoc1.getElementsByTagName("kw");
 setTimeout(function(){for(var i=0;i<urlx.length;i++){
-    dgbyid("ljurl").innerHTML+='<a class="sma1" href="http://my.4399.com/forums/thread-' + urlx[i].childNodes[0].nodeValue + '" target="_blank">' + textx[i].childNodes[0].nodeValue + '</a>';
+    dgbyid("ljurl").innerHTML+='<a class="sma1" href="https://my.4399.com/forums/thread-' + urlx[i].childNodes[0].nodeValue + '" target="_blank">' + textx[i].childNodes[0].nodeValue + '</a>，';
 }},1000);
 function sm2_se(){
     var str=dgbyid("con2").value;
     var sejg="";
     for(var i=0;i<textx.length;i++){
         if(textx[i].childNodes[0].nodeValue.indexOf(str)!=-1){
-            sejg=sejg+"<p><a class='sma1' href='https://http://my.4399.com/forums/thread-"+urlx[i].childNodes[0].nodeValue+"-hostonly-1'>"+textx[i].childNodes[0].nodeValue+"</a></p>";
+            sejg=sejg+"<li><a class='sma1' href='https://my.4399.com/forums/thread-"+urlx[i].childNodes[0].nodeValue+"-hostonly-1' target=''>"+textx[i].childNodes[0].nodeValue+"</a></li>";
         }
     }
+    sejg="<ul>"+sejg+"</ul>";
     dgbyid("ljjg").innerHTML=sejg;
+    b2();
 }
 
 </script>
