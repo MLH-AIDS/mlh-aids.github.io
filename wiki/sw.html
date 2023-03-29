@@ -129,7 +129,8 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 //累积搜索
 xmlDoc1=loadXMLDoc("https://mlh-aids.github.io/wiki/ljurl.xml");
 urlx=xmlDoc1.getElementsByTagName("url");
-textx=xmlDoc1.getElementsByTagName("kw");
+textx=xmlDoc1.getElementsByTagName("text");
+kwx=xmlDoc1.getElementsByTagName("kw");
 setTimeout(function(){for(var i=0;i<urlx.length;i++){
     dgbyid("ljurl").innerHTML+='<a class="sma1" href="https://my.4399.com/forums/thread-' + urlx[i].childNodes[0].nodeValue + '" target="_blank">' + textx[i].childNodes[0].nodeValue + '</a>，';
 }},1000);
@@ -137,7 +138,7 @@ function sm2_se(){
     var str=dgbyid("con2").value;
     var sejg="";
     for(var i=0;i<textx.length;i++){
-        if(textx[i].childNodes[0].nodeValue.indexOf(str)!=-1){
+        if(kwx[i].childNodes[0].nodeValue.indexOf(str)!=-1){
             sejg=sejg+"<li><a class='sma1' href='https://my.4399.com/forums/thread-"+urlx[i].childNodes[0].nodeValue+"-hostonly-1' target=''>"+textx[i].childNodes[0].nodeValue+"</a></li>";
         }
     }

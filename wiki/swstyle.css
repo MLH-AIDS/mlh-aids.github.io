@@ -1,16 +1,16 @@
     .dbody{overflow: scroll;}
-    #fd01{
+    #fd01,#fd01b{
         margin:0 auto;box-sizing:border-box;display:flex;flex-wrap:wrap;align-items:stretch;max-width:600px;width:100%;color:#FFFFFF;font-family:RubikRegular;font-size:16px;white-space:normal;margin-bottom:30px;
     }
-    #fo{box-sizing:border-box;border:none;margin:0px;/*max-width:650px;*/width:calc(100% - 1em);}
-    #fd02{
+    #fo,#fob{box-sizing:border-box;border:none;margin:0px;/*max-width:650px;*/width:calc(100% - 1em);}
+    #fd02,#fd02b{
     box-sizing:border-box;display:flex;flex-flow:row wrap;}
-    #label{box-sizing:border-box;display:inline-block;margin:0px;max-width:600px;width:100%;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
-    #con{
+    #label1,#label2{box-sizing:border-box;display:inline-block;margin:0px;max-width:600px;width:100%;font-weight:bold;font-size:20px;text-transform:uppercase;padding-bottom:20px;line-height:1;}
+    #con,#con2{
         margin:0px;font-family:inherit;font-size:inherit;line-height:1.07143em;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11;border-radius:3px 0px 0px 3px;
         color:#FFFFFF;background:#1A3346;width:auto;padding:12px;box-shadow:rgba(70, 223, 17, 0.31) 0px 0px 5px;vertical-align:middle;max-width:auto;direction:ltr;transition:color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;height:50px;flex:1 1 0%;
     }
-    #tagid{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background-image:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');background-position:center center;min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:13%;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;--tagid:calc(13%)}
+    #tagid,.sm2sub{margin:0px;font-family:inherit;font-size:1em;line-height:1;overflow:visible;border-width:1px;border-style:solid;border-color:#46DF11 #46DF11 #46DF11 #A2A9B1;border-top-right-radius:3px;border-bottom-right-radius:3px;background-image:url('https://user-images.githubusercontent.com/110889622/187967374-4ace5e5b-1fcb-4a23-9b63-43d23ca18da9.png');background-position:center center;min-width:4em;max-width:28.75em;padding:0.571429em 0.9375em;cursor:pointer;vertical-align:middle;font-weight:bold;appearance:button;zoom:1;direction:ltr;width:13%;transition:background-color 100ms ease 0s, color 100ms ease 0s, border-color 100ms ease 0s, box-shadow 100ms ease 0s;text-indent:-300px;box-shadow:none;border-top-left-radius:0px !important;border-bottom-left-radius:0px !important;color:white !important;height:inherit !important;--tagid:calc(13%)}
     .know{
         background:#213B4E;
         border:1 soild #466278;
