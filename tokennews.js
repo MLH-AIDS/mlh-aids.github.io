@@ -1,0 +1,1 @@
+document.getElementById("news").innerHTML="最新版本：v0.1.1。"

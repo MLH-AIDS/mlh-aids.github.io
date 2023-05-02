@@ -42,14 +42,30 @@ echo "<p>当前json内容：".file_get_contents($filename)."</p>";
 	  </div>
 	  <button type="submit" class="btn btn-primary">提交</button>
 	</form>
+	<p><a href="http://my.4399.com/yxtk?sid=1">4399</a></p>
 	<div class="mb-3">
-	本文件使用PHP代码，用正则表达式去除token中的不重要的部分并转译url符，然后在htdocs目录里创建/更新token.json文件。<br>
-	token.json也可以自行创建和更新，本页面只作为工具使用。<br>
-	有bug请反馈。<br>
-	去除的部分：https://3dtank.com/play/?token=和&sub_partner_id=partner4399<br>
-	如果本工具无法写入文件，查看htdocs目录的权限并修改。
+	    <div class="alert alert-primary">
+    	    <strong>操作提示:</strong> 自动去除的部分：<code>https://3dtank.com/play/?token=</code>和<code>&sub_partner_id=partner4399</code>。如果不是4399渠道，可能sub_partner_id略有不同，请自行删去。<br>
+    	    如果本工具无法写入文件，查看htdocs目录的<span data-bs-toggle="tooltip" title="写入权限">权限</span>并修改。
+        </div>
+	    <div class="alert alert-secondary">
+            <strong>次要信息:</strong> <small>本文件使用PHP代码，用正则表达式自动去除token中的不重要的部分并转译url符，然后在htdocs目录里自动创建/更新token.json文件。<br>
+	        token.json也可以手动创建和更新，本页面只作为工具使用。</small><br>
+	        有bug请反馈。<br>
+	        <a href="https://mlh-aids.github.io/dl_token">[下载更新]</a>
+        </div>
+	</div>
+	<div class="mb-3">
+	当前版本：v0.1.1。<span id="news"></span>
 	</div>
 </div>
-
+<script>
+// 初始化提示框
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+<script src="https://mlh-aids.github.io/tokennews.js"></script>
 </body>
 </html>
