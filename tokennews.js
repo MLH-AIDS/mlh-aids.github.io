@@ -1,1 +1,1 @@
-document.getElementById("news").innerHTML="最新版本：v0.1.1。"
+document.getElementById("news").innerHTML="最新版本：v0.1.2。更新页面内4399token链接"

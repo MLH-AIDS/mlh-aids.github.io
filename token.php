@@ -42,7 +42,9 @@ echo "<p>当前json内容：".file_get_contents($filename)."</p>";
 	  </div>
 	  <button type="submit" class="btn btn-primary">提交</button>
 	</form>
-	<p><a href="http://my.4399.com/yxtk?sid=1">4399</a></p>
+	<div class="mb-3">
+	    <p><a href="http://my.4399.com/yxtk/">4399登陆</a>，<a href="http://my.4399.com/yxtk/play?sid=1">4399token</a></p>
+	</div>
 	<div class="mb-3">
 	    <div class="alert alert-primary">
     	    <strong>操作提示:</strong> 自动去除的部分：<code>https://3dtank.com/play/?token=</code>和<code>&sub_partner_id=partner4399</code>。如果不是4399渠道，可能sub_partner_id略有不同，请自行删去。<br>
@@ -56,7 +58,7 @@ echo "<p>当前json内容：".file_get_contents($filename)."</p>";
         </div>
 	</div>
 	<div class="mb-3">
-	当前版本：v0.1.1。<span id="news"></span>
+	当前版本：v0.1.2。<span id="news"></span>
 	</div>
 </div>
 <script>
