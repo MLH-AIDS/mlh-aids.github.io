@@ -1,3 +1,20 @@
+<?php
+
+$filename = isset($_REQUEST['filename'])? $_REQUEST['filename'] : 'token.json';
+$token = isset($_REQUEST['token'])? $_REQUEST['token'] : '';
+$test = str_replace("https://3dtank.com/play/?token=","",$token);
+$test = str_replace("&sub_partner_id=partner4399","",$test);
+$test = urldecode($test);
+$data='{"errCode":0,"message":"ok","data":"'. $test .'","ticks":0}';
+$flags = "FILE_USE_INCLUDE_PATH";
+
+if(isset($_REQUEST['try'])&&$_REQUEST['try']==1&&is_file($filename)){
+    json_decode(file_get_contents($filename), true)["data"];
+    Header("Location: https://3dtank.com/play?token=".json_decode(file_get_contents($filename), true)["data"]);
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,17 +35,18 @@
   <h2>处理与安装token</h2>
 <div class='mb-3' style='overflow: scroll;'>
 <?php
-$filename = isset($_REQUEST['filename'])? $_REQUEST['filename'] : 'token.json';
-$token = isset($_REQUEST['token'])? $_REQUEST['token'] : '';
-$test = str_replace("https://3dtank.com/play/?token=","",$token);
-$test = str_replace("&sub_partner_id=partner4399","",$test);
-$test = urldecode($test);
-$data='{"errCode":0,"message":"ok","data":"'. $test .'","ticks":0}';
-$flags = "FILE_USE_INCLUDE_PATH";
+
+
 if(isset($_REQUEST['filename'])&&isset($_REQUEST['token'])){
-file_put_contents($filename,$data);
+  file_put_contents($filename,$data);
 }
-echo "<p>当前json内容：".file_get_contents($filename)."</p>";
+if(is_file($filename)){
+echo "<p>文件“".$filename."”内容：".file_get_contents($filename)."</p>";
+}else{
+echo "<p>文件“".$filename."”不存在</p>";
+}
+
+
 ?>
 </div>
 	<form action="">
@@ -44,6 +62,7 @@ echo "<p>当前json内容：".file_get_contents($filename)."</p>";
 	</form>
 	<div class="mb-3">
 	    <p><a href="http://my.4399.com/yxtk/">4399登陆</a>，<a href="http://my.4399.com/yxtk/play?sid=1">4399token</a></p>
+	    <p><a href="javascript: void(0)" onclick="window.open('?try=1&filename='+document.getElementById('filename').value,'_blank')">登陆尝试</a></p>
 	</div>
 	<div class="mb-3">
 	    <div class="alert alert-primary">
@@ -58,7 +77,7 @@ echo "<p>当前json内容：".file_get_contents($filename)."</p>";
         </div>
 	</div>
 	<div class="mb-3">
-	当前版本：v0.1.2。<span id="news"></span>
+	当前版本：v0.1.3。<span id="news"></span>
 	</div>
 </div>
 <script>
