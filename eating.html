@@ -1,0 +1,776 @@
+<!DOCTAPE html>
+<html>
+<head>
+<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<style>
+body{
+margin:0;
+padding:0;
+}
+#jr{
+display:none;
+}
+#full{
+position:fixed;
+top:3vw;right:3vw;
+opacity:0.7
+}
+#j,#k,#l{
+  margin:10;width:26;height:26;background:#999;
+}
+</style>
+<title>eating(matter.js) 1.5</title>
+<!--link rel="stylesheet" href="style.css"-->
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+<!--html-->
+<noscript>noscript</noscript>
+
+<canvas id="canvas" width="1200" height="675" style="width:100vw;">你的浏览器不支持canvas</canvas>
+
+<div id="control">
+  <div id="jr" style="margin:10;width:100;height:100;background:#ccc;">
+    <div id="jrc" style="position:relative;width:20;height:20;background:#ddd"></div>
+  </div>
+</div><!--#control-->
+<div id="full">
+<button style="margin:10" onclick="document.documentElement.webkitRequestFullScreen();"><i class="fa fa-expand" style="text-align:center;"></i></button>
+<button style="margin:10" onclick="document.webkitExitFullscreen()"><i class="fa fa-compress" style="text-align:center;"></i></button>
+</div>
+<div id="log"></div>
+<!--a href="?m=1">11</a-->
+<!-- <script src="matter.js"></script> -->
+<script src="matter.min.js"></script>
+<!--script src="matter-spring.js"></script-->
+<!-- <script src="tool.js"></script> -->
+<script>
+function dgbyid(idid){
+return document.getElementById(idid)
+}
+
+function at(n) {
+    // ToInteger() abstract op
+    n = Math.trunc(n) || 0;
+    // Allow negative indexing from the end
+    if (n < 0) n += this.length;
+    // OOB access is guaranteed to return undefined
+    if (n < 0 || n >= this.length) return undefined;
+    // Otherwise, this is just normal property access
+    return this[n];
+}
+const TypedArray = Reflect.getPrototypeOf(Int8Array);
+for (const C of [Array, String, TypedArray]) {
+    Object.defineProperty(C.prototype, "at",
+        {
+            value: at,
+            writable: true,
+            enumerable: false,
+            configurable: true
+        });
+}
+
+var GETs = (function(){
+    var url = window.document.location.href.toString();
+    var u = url.split("?");
+    if(typeof(u[1]) == "string"){
+        u = u[1].split("&");
+        var get = {};
+        for(var i in u){
+            var j = u[i].split("=");
+            get[j[0]] = j[1];
+        }
+        return get;
+    } else {
+        return {};
+    }
+})();//get对象
+
+//logs(dqsa("body")[0])
+
+//matter.js 0.19.0
+// module模块 aliases
+
+var Engine = Matter.Engine,
+    Render = Matter.Render,
+    Runner = Matter.Runner,
+    Bodies = Matter.Bodies,
+    Constraint = Matter.Constraint,//约束
+    Composite = Matter.Composite,
+    Composites = Matter.Composites,
+    Body = Matter.Body,
+    MouseConstraint = Matter.MouseConstraint,
+    Mouse = Matter.Mouse,
+    Query = Matter.Query,
+    Events = Matter.Events,
+    Example = Matter.Example,
+    Vector = Matter.Vector;
+    
+//Matter.use('matter-springs');//弹簧插件
+
+
+// create an engine
+var engine = Engine.create({
+  gravity:{x:0,y:0},
+  timing:{timeScale:1}
+});
+
+// create a renderer
+var render;
+(function(){
+let canvas=dgbyid("canvas");
+render = Render.create({
+    canvas: canvas,
+    //element: document.body,
+    engine: engine,
+    options: {
+        width: canvas.width,
+        height: canvas.height,
+        background:"#eee",
+        hasBounds:true,
+        //showAngleIndicator: true,
+        showPerformance: false,
+        showDebug: false,
+        showIds: false,
+        //showSeparations: true,
+        //showVelocity: true,
+         wireframes: false//线框模式
+    }
+});
+})();
+//...
+
+
+var loadstyle=[
+  {
+  width:1200,
+  height:675
+  },
+  {
+  width:600,
+  height:300
+  }
+];
+if(GETs.m && false){
+  
+  
+  let styles=loadstyle[Number(GETs.m)];
+  render.options.width=styles.width
+  render.options.height=styles.height
+  render.canvas.width=styles.width
+  render.canvas.height=styles.height
+}
+
+</script>
+<script>
+
+var hero=Bodies.rectangle(100, 100, 24, 24, {
+      render:{
+        fillStyle:"#333333",
+        opacity:1
+      },
+      collisionFilter:{group: Body.nextGroup(true)},
+      label:"hero",
+      airFriction:0.85
+    }),
+    shockwave=Bodies.circle(100,100,24,{
+      render:{
+        fillStyle:"#333333",
+        opacity:0.5
+      },
+      isSensor:true,
+      collisionFilter:{group: hero.collisionFilter.group},
+      label:"shockwave"
+    })
+    reds=Composite.create({label:"red"}),
+    pinks=Composite.create({label:"pink"}),
+    blues=Composite.create({label:"blue"}),
+Composite.add(engine.world,[hero])
+
+var walls=[
+  Bodies.rectangle(render.options.width/2, 0, render.options.width, 30, {label:"wall",isStatic:true}),
+  Bodies.rectangle(render.options.width/2, render.options.height, render.options.width, 30, {label:"wall",isStatic:true}),
+  Bodies.rectangle(0, render.options.height/2, 30, render.options.height, {label:"wall",isStatic:true}),
+  Bodies.rectangle(render.options.width, render.options.height/2, 30, render.options.height, {label:"wall",isStatic:true})
+]
+Composite.add(engine.world,walls)
+
+function red(){
+  let x=Math.floor(Math.random() * render.options.width-200)+100;
+  let y=Math.floor(Math.random() * render.options.height-200)+100;
+  let body=Bodies.rectangle(x, y, 30, 30, {
+    render:{
+      fillStyle:"#ff0000",
+      opacity:1
+    },
+    label:"red"
+  })
+  Composite.add(reds,[body])
+  Composite.add(engine.world,[body])
+}
+function pink(){
+  let red=Composite.allBodies(reds)[Math.floor(Math.random() * Composite.allBodies(reds).length)];
+  red.label="pink";
+  red.render.fillStyle="#ff00ff";
+  Composite.move(reds,[red],pinks)
+}
+function blue(){
+  let pink=Composite.allBodies(pinks)[Math.floor(Math.random() * Composite.allBodies(pinks).length)];
+  pink.label="blue";
+  pink.render.fillStyle="#0000ff";
+  pink.collisionFilter.group=Body.nextGroup(true)
+  Composite.move(pinks,[pink],blues)
+}
+
+var score={
+  n:0, l:0,
+  skill:{
+    j:10,k:30,l:10000,
+    buj:undefined,
+    buk:undefined,
+    bul:undefined
+  },
+  a(){
+    score.n++
+    if(score.n>score.l){score.l=score.n}
+    localStorage.scoren=score.n;
+    localStorage.scorel=score.l;
+    score.t()
+  },
+  s(){
+    if(hero.render.opacity===1){
+      score.n--;
+      localStorage.scoren=score.n;
+      Body.setPosition(hero,{x:100,y:100})
+      hero.render.opacity=0.5;
+      setTimeout(function(){hero.render.opacity=1;},3000);
+      score.t()
+    }
+  },t(){
+    if(score.n<score.skill.j){
+      score.skill.buj.coolingfull()
+      score.skill.buj.islock=true
+    }else{
+      score.skill.buj.islock=false
+    }
+    if(score.n<score.skill.k){
+      score.skill.buk.coolingfull()
+      score.skill.buk.islock=true
+    }else{
+      score.skill.buk.islock=false
+    }
+    if(score.n<score.skill.l){
+      score.skill.bul.coolingfull()
+      score.skill.bul.islock=true
+    }else{
+      score.skill.bul.islock=false
+    }
+  }
+};
+
+if (localStorage.scoren) {
+    score.n = Number(localStorage.scoren);
+}
+if (localStorage.scorel) {
+    score.l = Number(localStorage.scorel);
+}
+setTimeout("score.t()",300)
+
+
+Events.on(engine, 'collisionStart', function(event) {
+    var pairs = event.pairs;
+
+    for (let i of pairs) {
+        if(i.bodyA.label==="hero"&&i.bodyB.label==="red"){
+          Composite.remove(reds,i.bodyB);
+          Composite.remove(engine.world,i.bodyB);
+          score.a();
+        }else if(i.bodyA.label==="hero"&&i.bodyB.label==="pink"){
+          score.s();
+        }else if(i.bodyA.label==="wall"&&i.bodyB.label==="pink"){
+          score.a();
+          Composite.remove(pinks,i.bodyB);
+          Composite.remove(engine.world,i.bodyB)
+        }else if(i.bodyA.label==="pink"&&i.bodyB.label==="pink"&&Math.floor((Math.random()*3))===1){
+          let scalem=(i.bodyA.area+i.bodyB.area)**0.5/(i.bodyA.area**0.5)
+          Body.scale(i.bodyA,scalem,scalem)//,Vector.div(Vector.add(i.bodyA.position,i.bodyB.position),2)
+          Composite.remove(pinks,i.bodyB);
+          Composite.remove(engine.world,i.bodyB)
+        }else if(i.bodyB.label==="shoot"){
+          if(i.bodyA.label==="hero"){
+            score.s();
+          }
+          shootvector.splice(shootvector.indexOf(i.bodyB),2);
+          Composite.remove(engine.world,i.bodyB)
+        }else if(i.bodyA.label==="hero"&&i.bodyB.label==="blue"){
+          score.a();
+          Composite.remove(blues,i.bodyB);
+          Composite.remove(engine.world,i.bodyB)
+        }else if(pairla(i,"mine","pink")||pairla(i,"mine","red")||pairla(i,"mine","blue")){
+          removebody(i.bodyA)
+          removebody(i.bodyB)
+          score.a()
+        }
+    }
+    function pairla(pair,labelA,labelB){
+      if((pair.bodyA.label===labelA&&pair.bodyB.label===labelB)||(pair.bodyA.label===labelB&&pair.bodyB.label===labelA)){
+        return true
+      }else{
+        return false
+      }
+    }
+    function removered(body){
+      Composite.remove(reds,body);
+      Composite.remove(engine.world,body);
+    }
+    function removepink(body){
+      Composite.remove(pinks,body);
+      Composite.remove(engine.world,body);
+    }
+    function removeblue(body){
+      Composite.remove(blues,body);
+      Composite.remove(engine.world,body);
+    }
+    function removebody(body){
+      switch (body.label){
+        case "red":
+        Composite.remove(reds,body);
+        break;
+        case "pink":
+        Composite.remove(pinks,body);
+        break;
+        case "blue":
+        Composite.remove(blues,body);
+        break;
+        case "mine":
+        break;
+        case "shoot":
+        shootvector.splice(shootvector.indexOf(body),2);
+      }
+      Composite.remove(engine.world,body);
+    }
+});
+
+//运行(渲染)renderer
+Render.run(render);
+//创建runner
+var runner = Runner.create();
+//运行engine
+Runner.run(runner, engine);
+
+//Engine.run(engine);
+//Render.run(render);
+
+//Cbutton: canvas button
+var Cbutton={
+    create(options){
+        let bu={
+            position:options.position,
+            radius:options.radius,
+            backgroundcolor:options.backgroundcolor,
+            text:options.text,
+            islock:true,
+            render(){
+                var ctx=render.context;
+        
+                ctx.beginPath();
+                ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle=this.backgroundcolor;
+                ctx.fill();
+                
+                ctx.beginPath();
+                ctx.arc(this.position.x, this.position.y, this.radius, Math.PI * -1 * this.cooling + Math.PI/2, Math.PI * 1 * this.cooling + Math.PI/2);
+                ctx.fillStyle="rgba(100,100,100,0.5)";
+                ctx.fill();
+                
+                Object.assign(ctx,{
+                    font:50+"px Arial",
+                    textAlign:"center",
+                    fillStyle:"#A3ACDC"
+                });
+                ctx.fillText(this.text, this.position.x, this.position.y+15);
+            },
+            cooling:1,
+            coolingvelocity:options.coolingvelocity,
+            coolingsub(){
+                if(this.cooling>0&&this.islock===false){
+                    this.cooling-=this.coolingvelocity;
+                }
+            },
+            coolingfull(){
+                this.cooling=1;
+            },
+            click:options.click
+        };
+        this.all.push(bu);
+        setInterval(function(){bu.coolingsub()},20)
+        return bu;
+    },
+    render(){
+        for(let i of this.all){
+            i.render();
+        }
+    },
+    all:[],
+    getbutton(position){
+        for(let i of this.all){
+            if(Vector.magnitudeSquared(Vector.sub(i.position,clickworld(position)))**0.5<=i.radius){
+                return i;
+            }
+        }
+    }
+};
+score.skill.buj=Cbutton.create({
+    position:{x:render.canvas.width-100,y:render.canvas.height-375},
+    radius:60,
+    backgroundcolor:rgba(250,250,40,0.7),
+    text:"J",
+    coolingvelocity:0.002,
+    click:function(){
+        
+        if(this.cooling<=0){
+            this.coolingfull()
+            Body.setPosition(shockwave,hero.position)
+            Body.scale(shockwave,0.1,0.1)
+            shockwave.render.opacity=0.5
+            Composite.add(engine.world,[shockwave])
+        }
+    }
+});
+score.skill.buk=Cbutton.create({
+    position:{x:render.canvas.width-100,y:render.canvas.height-375+130},
+    radius:60,
+    backgroundcolor:rgba(250,250,40,0.7),
+    text:"K",
+    coolingvelocity:0.001,
+    click:function(){
+        
+        if(this.cooling<=0){
+            this.coolingfull()
+            let mines=[];
+            for(let i=0;i<3;i++){
+            mines.push(Bodies.polygon(hero.position.x,hero.position.y,3,12,{
+                render:{
+                  fillStyle:"#333333",
+                },
+                collisionFilter:{group: hero.collisionFilter.group},
+                label:"mine",
+                airFriction:1
+            }))
+            }
+            Composite.add(engine.world,mines)
+            let m=0.001, n=hero.angle;
+            for(let i in mines){
+              Body.applyForce( mines[i], mines[i].position, {x:m*Math.cos(n+i*2), y:m*Math.sin(n+i*2)});
+            }
+        }
+    }
+});
+score.skill.bul=Cbutton.create({
+    position:{x:render.canvas.width-100,y:render.canvas.height-375+260},
+    radius:60,
+    backgroundcolor:rgba(250,250,40,0.7),
+    text:"L",
+    coolingvelocity:0.0003,
+    click:function(){
+        this.coolingfull()
+    }
+});
+
+var Cjr={
+    position:{x:210,y:render.canvas.height-210},
+    rollposition:{x:0,y:0},
+    radius:160,
+    backgroundcolor:rgba(250,250,250,0.5),
+    istouch:false,
+    render(){
+      var ctx=render.context;
+  
+      ctx.beginPath();
+      ctx.arc(this.position.x, this.position.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle=this.backgroundcolor;
+      ctx.fill();
+      
+      ctx.beginPath();
+      ctx.arc(this.position.x+this.rollposition.x, this.position.y+this.rollposition.y, this.radius*0.3, 0, Math.PI * 2);
+      ctx.fillStyle=rgba(200,200,200,0.9)
+      ctx.fill();
+    },
+    touch(touchposition,start){
+      let tmove=Vector.sub(touchposition,this.position)
+      let distance=Vector.magnitudeSquared(tmove)**0.5
+      if(start&&distance<=this.radius){
+          this.istouch=true;
+      }
+      if(this.istouch){
+        if(distance<=this.radius){
+          this.rollposition=tmove
+        }else{
+          this.rollposition=Vector.mult(tmove,this.radius/distance)
+        }
+        Object.assign(heromove,Vector.div(this.rollposition,this.radius/1.75))
+        heromove.ismove=true
+      }
+    },
+    end(event){
+        Cjr.istouch=false
+        Cjr.rollposition=Vector.create()
+        
+        heromove.x=0
+        heromove.y=0
+        heromove.ismove=false
+    }
+};
+
+render.canvas.addEventListener("touchstart",function(event){
+      let touchposition=clickworld(Vector.create(event.targetTouches[0].pageX,event.targetTouches[0].pageY))
+      Cjr.touch(touchposition,true)
+})
+render.canvas.addEventListener("touchmove",function(event){
+      let touchposition=clickworld(Vector.create(event.targetTouches[0].pageX,event.targetTouches[0].pageY))
+      Cjr.touch(touchposition,false)
+})
+render.canvas.addEventListener("touchend",Cjr.end)
+
+function rgba(red,green,blue,opacity){
+    return "rgba("+red+","+green+","+blue+","+opacity+")";
+}
+
+setInterval(function(){
+    
+  i=11
+  if(score.n>10){i=6}
+  if(score.n>20){i=3}
+  if(Composite.allBodies(reds).length<i){
+    red();
+  }else if(Composite.allBodies(pinks).length<11){
+    pink();
+    if(Composite.allBodies(pinks).length>3&&Composite.allBodies(blues).length===0&&score.n>20&&Math.floor(Math.random() * 3)===1){
+      blue();
+    }
+  }
+  
+
+},1700)
+
+setInterval(function(){
+
+  let sp=1;//移动速度
+  for(let i of Composite.allBodies(pinks)){
+    let p=Vector.sub(hero.position,i.position)
+    Body.setVelocity(i,Vector.mult(p,sp/Math.sqrt(p.x**2+p.y**2)))
+  }
+
+},500)
+
+var shootvector=[];
+setInterval(function(){
+
+  let sp=2;//
+  for(let i of Composite.allBodies(blues)){
+    let shoot=Bodies.circle(i.position.x,i.position.y,10,{
+      render:{fillStyle:"#0000ff"},
+      collisionFilter:{group: i.collisionFilter.group},
+      label:"shoot",
+      friction:0,
+      airFriction:0
+    });
+    let p=Vector.sub(hero.position,shoot.position);
+    Composite.add(engine.world,shoot);
+    shootvector.push(shoot);
+    shootvector.push(Vector.mult(p,sp/Math.sqrt(p.x**2+p.y**2)));
+  }
+  for(let i=0;i<shootvector.length;i=i+2){
+    Body.setVelocity(shootvector[i],shootvector[i+1])
+  }
+  
+
+},1500)
+
+Events.on(runner, "beforeUpdate", function(){
+  
+  Cbutton.render()
+  Cjr.render()
+  
+  let ctx=render.context;
+  let fontsize=render.options.height/25;
+  Object.assign(ctx,{
+    font:fontsize+"px Arial",
+    textAlign:"start",
+    fillStyle:"#000"
+  });
+  let filltexts=[
+    "当前得分: "+score.n,
+    "累计得分: "+score.l
+  ];
+  for(let i in filltexts){
+    ctx.fillText(filltexts[i], 50, i*fontsize+render.options.height*5/6);
+  }
+  
+  if(heromove.ismove){
+    Body.setVelocity(hero, heromove)
+  }
+  
+  if(Composite.allBodies(engine.world).indexOf(shockwave)!==-1){
+    if(shockwave.area<3.14*24**2*10){
+      Body.scale(shockwave,1.2,1.2)
+      Body.setPosition(shockwave,hero.position)
+      shockwave.render.opacity-=0.2
+    }else{
+      for(let i of Query.collides(shockwave, Composite.allBodies(engine.world))){
+        if(i.bodyB.label==="hero" || i.bodyB.label==="shockwave" || i.bodyB.isStatic===true){continue}
+        let p=Vector.sub(i.bodyB.position,i.bodyA.position)
+        Body.applyForce( i.bodyB, i.bodyB.position, Vector.mult(p,0.1/Math.sqrt(p.x**2+p.y**2)));
+      }
+      Composite.remove(engine.world,[shockwave])
+    }
+  }
+  
+  
+  
+});
+
+render.canvas.onclick=function(e){
+
+    let clicked=Cbutton.getbutton(Vector.create(e.pageX,e.pageY));
+    if(clicked){
+        clicked.click();
+    }
+    
+};
+
+window.onkeydown = function (event) {//按键
+    event = event || window.event;//浏览器兼容
+    let speed=1.75
+    if (event.keyCode == 87) {//W
+        heromove.y=-speed
+        heromove.ismove=true
+    }
+    if (event.keyCode == 65) {//a
+        heromove.x=-speed
+        heromove.ismove=true
+    }
+    if (event.keyCode == 83) {//s
+        heromove.y=speed
+        heromove.ismove=true
+    }
+    if (event.keyCode == 68) {//D
+        heromove.x=speed
+        heromove.ismove=true
+    }
+    if (event.keyCode == 74) {//J
+        
+    }
+    if (event.keyCode == 75) {//K
+        
+    }
+    if (event.keyCode == 76) {//L
+        
+    }
+};
+window.onkeyup = function (event) {//按键
+    event = event || window.event;//浏览器兼容
+    if (event.keyCode == 87) {//W
+        heromove.y=0
+        heromove.ismove=false
+    }
+    if (event.keyCode == 65) {//a
+        heromove.x=0
+        heromove.ismove=false
+    }
+    if (event.keyCode == 83) {//s
+        heromove.y=0
+        heromove.ismove=false
+    }
+    if (event.keyCode == 68) {//D
+        heromove.x=0
+        heromove.ismove=false
+    }
+    if (event.keyCode == 74) {//J
+        score.skill.buj.onclick()
+    }
+    if (event.keyCode == 75) {//K
+        score.skill.buk.onclick()
+    }
+    if (event.keyCode == 76) {//L
+        score.skill.bul.onclick()
+    }
+};
+
+var heromove={
+  x:0,
+  y:0,
+  ismove:false,
+  begin:function(event){
+    let speed=1.75;
+    heromove.x=(event.targetTouches[0].pageX-jr.offsetLeft-jr.offsetWidth/2)/jr.offsetWidth*2
+    heromove.y=(event.targetTouches[0].pageY-jr.offsetTop-jr.offsetHeight/2)/jr.offsetHeight*2
+    if(heromove.x>1){heromove.x=1}
+    if(heromove.x<-1){heromove.x=-1}
+    if(heromove.y>1){heromove.y=1}
+    if(heromove.y<-1){heromove.y=-1}
+    dgbyid("jrc").style.left=heromove.jrcbase.x*(1+heromove.x)
+    dgbyid("jrc").style.top=heromove.jrcbase.y*(1+heromove.y)
+    Object.assign(heromove,Vector.mult(heromove,speed))
+    heromove.ismove=true
+  },
+  end:function(event){
+    heromove.x=0;
+    heromove.y=0;
+    dgbyid("jrc").style.left=heromove.jrcbase.x
+    dgbyid("jrc").style.top=heromove.jrcbase.y
+    heromove.ismove=false;
+  },
+  jrcbase:{
+    x:dgbyid("jr").offsetWidth/2-dgbyid("jrc").offsetWidth/2,
+    y:dgbyid("jr").offsetHeight/2-dgbyid("jrc").offsetHeight/2
+  }
+}
+heromove.end()
+jr.addEventListener("touchstart",heromove.begin)
+jr.addEventListener("touchmove",heromove.begin)
+jr.addEventListener("touchend",heromove.end)
+
+
+
+function clickworld(point){
+    return { x:render.bounds.min.x+point.x/render.canvas.offsetWidth*render.canvas.width,
+    y:render.bounds.min.y+point.y/render.canvas.offsetWidth*render.canvas.width }
+}
+
+
+
+function dqsa(qsqs){return document.querySelectorAll(qsqs);}
+function logs(e){
+dgbyid("log").innerHTML+=e+", ";
+console.log(e)
+}
+
+
+
+class Loop{
+  constructor(event,interval){
+    this.tick=0;
+    this.times=undefined;
+    this.event=function(){
+      event();
+      if(++this.tick===this.times){this.stop();this.times=undefined;}
+    };
+    this.event=this.event.bind(this)
+    this.interval=interval;
+    this.run=undefined;
+  }
+  start(times){
+    this.run=setInterval(this.event,this.interval)
+    if(times){
+      this.times=times;
+    }
+  }
+  stop(){
+    clearInterval(this.run)
+  }
+}
+</script>
+
+</body>
+</html>
